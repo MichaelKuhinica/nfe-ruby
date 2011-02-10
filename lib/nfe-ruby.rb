@@ -18,5 +18,5 @@ require 'entidades/endereco_emitente'
 x = EnderecoEmitente.new
 
 puts
-puts x.to_xml
+#puts x.to_xml
 puts

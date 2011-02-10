@@ -1,15 +1,15 @@
-require 'active_model/validations'
-require 'active_model/serialization'
+#require 'active_model/validations'
+#require 'active_model/serialization'
 #TODO: usar validacoes sem usar active record
 class EnderecoEmitente
-  include ActiveModel::Validations
-  include ActiveModel::Serializers::JSON
-  include ActiveModel::Serializers::Xml
+ # include ActiveModel::Validations
+ # include ActiveModel::Serializers::JSON
+ # include ActiveModel::Serializers::Xml
 
 
-  validates_length_of :xLgr, :nro, :xCpl, :xBairro, :xMun, :in => 2...60
-  validates :CEP, :format => {:with => /[0-9]{8}/} #sem traços, somente numeros
-  validates :fone, :format => {:with => /[0-9]{6,14}/} #DDD + número do telefone
+#  validates_length_of :xLgr, :nro, :xCpl, :xBairro, :xMun, :in => 2...60
+#  validates :CEP, :format => {:with => /[0-9]{8}/} #sem traços, somente numeros
+#  validates :fone, :format => {:with => /[0-9]{6,14}/} #DDD + número do telefone
 
   #cmun codUFIBGE
   #UF TUFIBGE 9999999 para exterior

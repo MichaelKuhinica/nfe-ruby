@@ -1,9 +1,9 @@
 require 'configuracao/parametros'
-require 'active_model'
+#require 'active_model'
 
 class Cliente
-    include ActiveModel::Serializers::JSON
-    include ActiveModel::Serializers::Xml
+ #   include ActiveModel::Serializers::JSON
+#    include ActiveModel::Serializers::Xml
 
 
     # - Nome/Razão Social (obrigatorio)
