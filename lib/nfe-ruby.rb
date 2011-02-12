@@ -16,7 +16,4 @@ require 'entidades/transportadora'
 require 'entidades/endereco_emitente'
 
 x = EnderecoEmitente.new
-
-puts
-#puts x.to_xml
-puts
+puts x.to_nfe_format

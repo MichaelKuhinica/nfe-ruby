@@ -1,10 +1,12 @@
+#coding: utf-8
+
 #require 'active_model/validations'
 #require 'active_model/serialization'
+require 'entidades/nfe_entity'
 #TODO: usar validacoes sem usar active record
+
 class EnderecoEmitente
- # include ActiveModel::Validations
- # include ActiveModel::Serializers::JSON
- # include ActiveModel::Serializers::Xml
+  include NfeEntity
 
 
 #  validates_length_of :xLgr, :nro, :xCpl, :xBairro, :xMun, :in => 2...60
@@ -37,18 +39,19 @@ class EnderecoEmitente
   #Testar se tem como controlar o que será atributo e o que será valor
   #,esta gerando uma saida invalida
   def attributes
-    @attributes = {'TEnderEmi' =>
-                       {'xLgr'    => xlgr,
-                        'nro'     => nro,
-                        'xCpl'    => xcpl,
-                        'xBairro' => xbairro,
-                        'cMun'    => cmun,
-                        'xMun'    => xmun,
-                        'UF'      => uf,
-                        'CEP'     => cep,
-                        'cPais'   => cpais,
-                        'xPais'   => xpais,
-                        'fone'    => fone}}
+    @attributes = {
+          'xLgr'    => xlgr,
+          'nro'     => nro,
+          'xCpl'    => xcpl,
+          'xBairro' => xbairro,
+          'cMun'    => cmun,
+          'xMun'    => xmun,
+          'UF'      => uf,
+          'CEP'     => cep,
+          'cPais'   => cpais,
+          'xPais'   => xpais,
+          'fone'    => fone
+    }
   end
 
 end

@@ -1,63 +1,80 @@
 require 'configuracao/parametros'
+require 'entidades/endereco_emitente'
 
 class Emitente
-    # - Nome/Razao Social (obrigatorio)
-    attr_accessor :razao_social
+  # - Nome/Razao Social (obrigatório)
+  attr_accessor :razao_social
 
-    # - Nome Fantasia
-    attr_accessor :nome_fantasia
+  # - Nome Fantasia
+  attr_accessor :nome_fantasia
 
-    # - CNPJ (obrigatorio)
-    attr_accessor :cnpj
+  # - Nome
+  attr_accessor :nome
 
-    # - Inscricao Estadual (obrigatorio)
-    attr_accessor :inscricao_estadual
+  # - CNPJ (obrigatorio ou CPF)
+  attr_accessor :cnpj
 
-    # - CNAE Fiscal
-    attr_accessor :cnae_fiscal
+  # - CPF (obrigatorio ou CNPJ)
+  attr_accessor :cpf
 
-    # - Inscricao Municipal
-    attr_accessor :inscricao_municipal
+  # - Inscricao Estadual (obrigatorio)
+  attr_accessor :inscricao_estadual
 
-    # - Inscricao Estadual (Subst. Tributario)
-    attr_accessor :inscricao_estadual_subst_tributaria
+  # - CNAE Fiscal
+  attr_accessor :cnae_fiscal
 
-    # Endereco
-    # - Logradouro (obrigatorio)
-    attr_accessor :endereco_logradouro
+  # - Inscricao Municipal
+  attr_accessor :inscricao_municipal
 
-    # - Numero (obrigatorio)
-    attr_accessor :endereco_numero
+  # - Inscricao Estadual (Subst. Tributario)
+  attr_accessor :inscricao_estadual_subst_tributaria
 
-    # - Complemento
-    attr_accessor :endereco_complemento
+  # Logotipo
+  attr_accessor :logotipo
 
-    # - Bairro (obrigatorio)
-    attr_accessor :endereco_bairro
+  #Grupo de informações de interesse da Prefeitura
+  attr_accessor :grupo_informacoes_interesse_prefeitura
 
-    # - CEP
-    attr_accessor :endereco_cep
+  #CNAE fiscal
+  attr_accessor :cnae
 
-    # - Pais (aceita somente Brasil)
-    attr_accessor :endereco_pais
+  #Código de Regime Tributário.(Obrigatorio)
+  attr_accessor :crt
 
-    # - UF (obrigatorio)
-    attr_accessor :endereco_uf
+  attr_accessor :endereco_emitente
 
-    # - Municipio (obrigatorio)
-    attr_accessor :endereco_municipio
+  def endereco_emitente=(tEnderEmi)
+    @endereco_emitente = tEnderEmi if tEnderEmi.is_a? EnderecoEmitente
+  end
 
-    # - Telefone
-    attr_accessor :endereco_telefone
+  def crt=(valor)
+    @crt = valor if REGIMES_TRIBUTARIOS.include? valor
+  end
 
-    # Logotipo
-    attr_accessor :logotipo
+  def initialize
+    @endereco_pais = Parametros::CODIGO_BRASIL
+  end
 
-    def initialize
-        @endereco_pais = Parametros::CODIGO_BRASIL
-    end
+  def to_s
+    @cnpj
+  end
 
-    def to_s
-        @cnpj
-    end
+  def attributes
+    @attributes = {
+        'emit' =>
+               {
+                  'CNPJ'      => cnpj,
+                  'CPF'       => cpf,
+                  'xNome'     => nome,
+                  'xFant'     => nome_fantasia,
+                  'enderEmit' => endereco_emitente.to_nfe_format,
+                  'ie'        => inscricao_estadual,
+                  'iest'      => inscricao_estadual,
+                  'IM'        => grupo_informacoes_interesse_prefeitura,
+                  'CNAE'      => cnae,
+                  'CRT'       => crt
+               }
+    }
+  end
+
 end
