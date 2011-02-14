@@ -1,0 +1,257 @@
+<xs:schema xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://www.portalfiscal.inf.br/nfe" targetNamespace="http://www.portalfiscal.inf.br/nfe"
+           elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema_v1.01.xsd"/>
+  <xs:include schemaLocation="tiposBasico_v1.03.xsd"/>
+  <xs:element name="transp" >
+    <xs:annotation>
+      <xs:documentation>Dados dos transportes da NF-e</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="modFrete">
+          <xs:annotation>
+            <xs:documentation>Modalidade do frete
+              0- Por conta do emitente;
+              1- Por conta do destinatário/remetente;
+              2- Por conta de terceiros;
+              9- Sem frete (v2.0)
+            </xs:documentation>
+          </xs:annotation>
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:whiteSpace value="preserve"/>
+              <xs:enumeration value="0"/>
+              <xs:enumeration value="1"/>
+              <xs:enumeration value="2"/>
+              <xs:enumeration value="9"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element name="transporta" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Dados do transportador</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:choice minOccurs="0">
+                <xs:element name="CNPJ" type="TCnpj">
+                  <xs:annotation>
+                    <xs:documentation>CNPJ do transportador</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+                <xs:element name="CPF" type="TCpf">
+                  <xs:annotation>
+                    <xs:documentation>CPF do transportador</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:choice>
+              <xs:element name="xNome" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Razão Social ou nome</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="TString">
+                    <xs:maxLength value="60"/>
+                    <xs:minLength value="1"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IE" type="TIeDest" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Inscrição Estadual (v2.0)</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="xEnder" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Endereço completo</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="TString">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="60"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="xMun" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Nome do munícipio</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="TString">
+                    <xs:maxLength value="60"/>
+                    <xs:minLength value="1"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UF" type="TUf" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Sigla da UF</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="retTransp" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Dados da retenção ICMS do Transporte</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="vServ" type="TDec_1302">
+                <xs:annotation>
+                  <xs:documentation>Valor do Serviço</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="vBCRet" type="TDec_1302">
+                <xs:annotation>
+                  <xs:documentation>BC da Retenção do ICMS</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="pICMSRet" type="TDec_0302">
+                <xs:annotation>
+                  <xs:documentation>Alíquota da Retenção</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="vICMSRet" type="TDec_1302">
+                <xs:annotation>
+                  <xs:documentation>Valor do ICMS Retido</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="CFOP" type="TCfopTransp">
+                <xs:annotation>
+                  <xs:documentation>Código Fiscal de Operações e Prestações // PL_006f - alterado para
+                    permitir somente CFOP de transportes
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="cMunFG" type="TCodMunIBGE">
+                <xs:annotation>
+                  <xs:documentation>Código do Município de Ocorrência do Fato Gerador (utilizar a tabela do
+                    IBGE)
+                  </xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:choice>
+          <xs:sequence minOccurs="0">
+            <xs:element name="veicTransp" type="TVeiculo" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation>Dados do veículo</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+            <xs:element name="reboque" type="TVeiculo" minOccurs="0" maxOccurs="5">
+              <xs:annotation>
+                <xs:documentation>Dados do reboque/Dolly (v2.0)</xs:documentation>
+              </xs:annotation>
+            </xs:element>
+          </xs:sequence>
+          <xs:element name="vagao" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identificação do vagão (v2.0)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="TString">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="20"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="balsa" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Identificação da balsa (v2.0)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="TString">
+                <xs:minLength value="1"/>
+                <xs:maxLength value="20"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:choice>
+        <xs:element name="vol" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Dados dos volumes</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="qVol" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Quantidade de volumes transportados</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:whiteSpace value="preserve"/>
+                    <xs:pattern value="[0-9]{1,15}"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="esp" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Espécie dos volumes transportados</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="TString">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="60"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="marca" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Marca dos volumes transportados</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="TString">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="60"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nVol" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Numeração dos volumes transportados</xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                  <xs:restriction base="TString">
+                    <xs:minLength value="1"/>
+                    <xs:maxLength value="60"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pesoL" type="TDec_1203" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Peso líquido (em kg)</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="pesoB" type="TDec_1203" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Peso bruto (em kg)</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="lacres" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="nLacre">
+                      <xs:annotation>
+                        <xs:documentation>Número dos Lacres</xs:documentation>
+                      </xs:annotation>
+                      <xs:simpleType>
+                        <xs:restriction base="TString">
+                          <xs:minLength value="1"/>
+                          <xs:maxLength value="60"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

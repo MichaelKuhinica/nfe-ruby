@@ -40,17 +40,17 @@ class EnderecoEmitente
   #,esta gerando uma saida invalida
   def attributes
     @attributes = {
-          'xLgr'    => xlgr,
-          'nro'     => nro,
-          'xCpl'    => xcpl,
-          'xBairro' => xbairro,
-          'cMun'    => cmun,
-          'xMun'    => xmun,
-          'UF'      => uf,
-          'CEP'     => cep,
-          'cPais'   => cpais,
-          'xPais'   => xpais,
-          'fone'    => fone
+        'xLgr'    => xlgr,
+        'nro'     => nro,
+        'xCpl'    => xcpl,
+        'xBairro' => xbairro,
+        'cMun'    => cmun,
+        'xMun'    => xmun,
+        'UF'      => uf,
+        'CEP'     => cep,
+        'cPais'   => cpais,
+        'xPais'   => xpais,
+        'fone'    => fone
     }
   end
 

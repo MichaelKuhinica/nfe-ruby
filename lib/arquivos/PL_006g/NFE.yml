@@ -1,5 +1,5 @@
 
-#TODO emit
+#TODO emit ok
   -emit
                       <xs:choice>
                         -CNPJ" type="TCnpj">
@@ -13,7 +13,7 @@
                         -IM">
                         -CNAE">
                       -CRT">
-#TODO avuls
+#TODO avulsa ok
   -avulsa
               -avulsa" minOccurs="0">
                     -CNPJ" type="TCnpj">
@@ -28,7 +28,7 @@
                     -repEmi">
                     -dPag" type="TData" minOccurs="0">
 
-#TODO dest
+#TODO dest ok
   -dest
                     <xs:choice>
                       -CNPJ" type="TCnpjOpc">
@@ -40,10 +40,10 @@
                     -ISUF" minOccurs="0">
                     -email" minOccurs="0">
                     
-#TODO retirada
+#TODO retirada ok
   -retirada
               -retirada" type="TLocal" minOccurs="0">
-#TODO entrega
+#TODO entrega ok
   -entrega
               -entrega" type="TLocal" minOccurs="0">
 #TODO det

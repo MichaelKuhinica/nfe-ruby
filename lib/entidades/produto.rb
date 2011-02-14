@@ -1,58 +1,62 @@
+require 'entidades/nfe_entity'
+
 # E provavel que esta entidade sera descartada, porque?
 class Produto
-    # - Descricao (obrigatorio)
-    attr_accessor :descricao
+  include NfeEntity
 
-    # - Codigo (obrigatorio) - nao pode ser alterado quando em edicao
-    attr_accessor :codigo
+  # - Descricao (obrigatorio)
+  attr_accessor :descricao
 
-    # - EAN
-    attr_accessor :ean
+  # - Codigo (obrigatorio) - nao pode ser alterado quando em edicao
+  attr_accessor :codigo
 
-    # - EAN Unid. Tributavel
-    attr_accessor :ean_unidade_tributavel
+  # - EAN
+  attr_accessor :ean
 
-    # - EX TIPI
-    attr_accessor :ex_tipi
+  # - EAN Unid. Tributavel
+  attr_accessor :ean_unidade_tributavel
 
-    # - Genero
-    attr_accessor :genero
+  # - EX TIPI
+  attr_accessor :ex_tipi
 
-    # - NCM
-    attr_accessor :ncm
+  # - Genero
+  attr_accessor :genero
 
-    # - Unid. Com.
-    attr_accessor :unidade_comercial
+  # - NCM
+  attr_accessor :ncm
 
-    # - Valor Unitario Com.
-    attr_accessor :valor_unitario_comercial
+  # - Unid. Com.
+  attr_accessor :unidade_comercial
 
-    # - Unid. Trib.
-    attr_accessor :unidade_tributavel
+  # - Valor Unitario Com.
+  attr_accessor :valor_unitario_comercial
 
-    # - Qtd. Trib.
-    attr_accessor :quantidade_tributavel
+  # - Unid. Trib.
+  attr_accessor :unidade_tributavel
 
-    # - Valor Unitario Trib.
-    attr_accessor :valor_unitario_tributavel
+  # - Qtd. Trib.
+  attr_accessor :quantidade_tributavel
 
-    # Impostos
-    # - ICMS (lista 1 para * / ManyToManyField)
-    attr_accessor :icms
+  # - Valor Unitario Trib.
+  attr_accessor :valor_unitario_tributavel
 
-    # - IPI
-    # - Classe de Enquadramento (cigarros e bebidas)
-    attr_accessor :ipi_classe_enquadramento
+  # Impostos
+  # - ICMS (lista 1 para * / ManyToManyField)
+  attr_accessor :icms
 
-    # - Codigo de Enquadramento Legal
-    attr_accessor :ipi_codigo_enquadramento_legal
+  # - IPI
+  # - Classe de Enquadramento (cigarros e bebidas)
+  attr_accessor :ipi_classe_enquadramento
 
-    # - CNPJ do Produtor
-    attr_accessor :ipi_cnpj_produtor
+  # - Codigo de Enquadramento Legal
+  attr_accessor :ipi_codigo_enquadramento_legal
 
-    def initialize
-        @icms = []
-    end
+  # - CNPJ do Produtor
+  attr_accessor :ipi_cnpj_produtor
+
+  def initialize
+    @icms = []
+  end
 
 end
 
