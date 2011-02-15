@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-require 'entidades/nfe_entity'
 
 
 class Cliente
@@ -9,7 +8,7 @@ class Cliente
 
 
   # - Nome/Razão Social (obrigatorio)
-  attr_accessor :razao_social
+  nfe_attr :razao_social
 
   # - Tipo de Documento (obrigatorio) - default CNPJ - TIPOS_DOCUMENTO
   attr_accessor :tipo_documento

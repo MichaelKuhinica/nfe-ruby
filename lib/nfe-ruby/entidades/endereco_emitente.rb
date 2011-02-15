@@ -2,7 +2,6 @@
 
 #require 'active_model/validations'
 #require 'active_model/serialization'
-require 'entidades/nfe_entity'
 #TODO: usar validacoes sem usar active record
 
 class EnderecoEmitente
@@ -29,7 +28,7 @@ class EnderecoEmitente
   attr_accessor :fone
 
   def cpais
-    Parametros::CODIGO_BRASIL
+    # Parametros::CODIGO_BRASIL
   end
 
   def xpais

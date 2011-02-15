@@ -8,6 +8,7 @@ puts 'Rodando nfe-ruby'
 
 require 'nfe-ruby/config/params'
 
+require 'nfe-ruby/entidades/nfe_entity'
 require 'nfe-ruby/entidades/cliente'
 require 'nfe-ruby/entidades/emitente'
 require 'nfe-ruby/entidades/nota_fiscal'

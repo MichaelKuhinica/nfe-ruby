@@ -1,8 +1,7 @@
-require 'entidades/nfe_entity'
 
 class ProdutoICMS
   include NfeEntity
-  
+
   # - Tipo de Tributacao (seleciona de lista) - ICMS_TIPOS_TRIBUTACAO
   attr_accessor :tipo_tributacao
 

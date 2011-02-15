@@ -1,5 +1,4 @@
 #coding: utf-8
-require 'entidades/nfe_entity'
 
 class NotaFiscal
   include NfeEntity

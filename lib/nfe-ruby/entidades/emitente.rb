@@ -1,5 +1,4 @@
-require 'configuracao/parametros'
-require 'entidades/endereco_emitente'
+# -*- coding: utf-8 -*-
 
 class Emitente
   # - Nome/Razao Social (obrigatório)

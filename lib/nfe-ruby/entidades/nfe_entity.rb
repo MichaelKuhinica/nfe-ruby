@@ -3,12 +3,29 @@
 module NfeEntity
 
 
+  def self.included(base)
+    base.extend ClassMethods
+    base.class_eval {  @xml_params ||= [] }
+  end
+
+  module ClassMethods
+
+    def nfe_attr *names
+      names.each do |name|
+        attr_accessor name
+        @xml_params << name
+      end
+
+    end
+
+  end
+
   def validate
     return true
   end
 
   def attributes
-    die('Método attributes não sobrescrito na entidade')
+    @xml_params #die('Método attributes não sobrescrito na entidade')
   end
 
   def to_nfe_format

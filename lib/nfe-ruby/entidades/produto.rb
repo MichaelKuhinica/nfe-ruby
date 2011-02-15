@@ -1,4 +1,3 @@
-require 'entidades/nfe_entity'
 
 # E provavel que esta entidade sera descartada, porque?
 class Produto
