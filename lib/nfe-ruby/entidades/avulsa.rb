@@ -1,5 +1,7 @@
+# -*- coding: utf-8 -*-
 require 'entidades/nfe_entity'
 
+module NFe
 class Avulsa
   include NfeEntity
 
@@ -54,4 +56,5 @@ class Avulsa
     }
   end
 
+end
 end
