@@ -1,5 +1,4 @@
-require 'configuracao/parametros'
-#require 'active_model'
+# -*- coding: utf-8 -*-
 require 'entidades/nfe_entity'
 
 
