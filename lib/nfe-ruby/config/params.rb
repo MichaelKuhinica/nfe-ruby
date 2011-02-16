@@ -145,6 +145,6 @@ module Nfe
   TIPOS_AMBIENTE = {
       1 => 'Producao',
       2 => 'Homologacao'
-  }
+  }.freeze
 
 end

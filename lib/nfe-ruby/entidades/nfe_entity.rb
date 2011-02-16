@@ -1,38 +1,31 @@
 #coding: utf-8
-module NfeEntity
-  
-  def self.included(base)
-    base.extend ClassMethods
-    base.class_eval {  @xml_params ||= [] }
-  end
 
-  module ClassMethods
+class NfeEntity
 
-    def nfe_attr *names
-      names.each do |name|
-        attr_accessor name
-        @xml_params << name
-      end
+  @@xml_params = []
 
+  def self.nfe_attr *names
+    names.each do |name|
+      attr_accessor name
+      @@xml_params << name.to_s
     end
-
-  end
-
-  def validate
-    return true
   end
 
   def attributes
-    @xml_params
+    hash = {}
+    @@xml_params.each do |attr|
+      hash = hash.merge(attr => send(attr))
+    end
+    hash
   end
 
   def to_nfe_format
     if validate
       xml = ""
-      attributes.each_pair do |key, value|
+      attributes.each do |key, value|
         xml += convert_to_xml(key, value)
       end
-      return xml
+      xml
     end
   end
 
@@ -57,4 +50,10 @@ module NfeEntity
       convert_to_xml(key, value)
     end
   end
+
+
+  def validate
+    true
+  end
+
 end

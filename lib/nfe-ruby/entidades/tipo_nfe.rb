@@ -5,14 +5,14 @@ require 'nfe-ruby/entidades/nfe_entity'
 class TipoNfe
   include NfeEntity
 
-  nfe_attr :nfe
+  nfe_attr :NFe
   nfe_attr :protNFe
   nfe_attr :versao
 
   def attributes
     @attributes = {
         'NFe' => nfe,
-        'protNFe' => protNFe,
+        'protNFe' => protNFe.to_nfe_format,
         'versao' => versao
     }
   end

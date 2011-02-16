@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 require 'nfe-ruby/config/params'
 
-class Cliente
-  include NfeEntity
+class Cliente < NfeEntity
 
   # - Nome/Razão Social (obrigatorio)
   nfe_attr :razao_social
