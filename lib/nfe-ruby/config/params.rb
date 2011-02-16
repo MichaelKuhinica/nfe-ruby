@@ -1,15 +1,15 @@
 #coding: utf-8
-module NFe
+module Nfe
 
-  NAMESPACE_NFE            = 'http://www.portalfiscal.inf.br/nfe'
-  NAMESPACE_SIG            = 'http://www.w3.org/2000/09/xmldsig#'
-  NAMESPACE_SOAP           = 'http://www.w3.org/2003/05/soap-envelope'
+  NAMESPACE_NFE           = 'http://www.portalfiscal.inf.br/nfe'
+  NAMESPACE_SIG           = 'http://www.w3.org/2000/09/xmldsig#'
+  NAMESPACE_SOAP          = 'http://www.w3.org/2003/05/soap-envelope'
 
-  VERSAO_PADRAO            = '1.00'
+  VERSAO_PADRAO           = '1.00'
 
-  WEBSERVICE_URL           = NAMESPACE_NFE # FIXME
+  WEBSERVICE_URL          = NAMESPACE_NFE # FIXME
 
-    REGIMES_TRIBUTARIOS     = {
+  REGIMES_TRIBUTARIOS     = {
       1 => 'Simples Nacional',
       2 => 'Simples Nacional - excesso de sublimite de receita bruta',
       3 => 'Regime Normal'
@@ -140,6 +140,11 @@ module NFe
       :MT => '51',
       :GO => '52',
       :DF => '53',
+  }
+
+  TIPOS_AMBIENTE = {
+      1 => 'Producao',
+      2 => 'Homologacao'
   }
 
 end

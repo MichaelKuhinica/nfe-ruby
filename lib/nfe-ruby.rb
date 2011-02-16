@@ -1,6 +1,6 @@
 require 'rubygems'
 
-# $LOAD_PATH.unshift(File.dirname(__FILE__))
+$LOAD_PATH.unshift(File.dirname(__FILE__))
 
 puts 'Rodando nfe-ruby'
 

@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
-
+require 'nfe-ruby/config/params'
 
 class Cliente
   include NfeEntity
-  #   include ActiveModel::Serializers::JSON
-#    include ActiveModel::Serializers::Xml
-
 
   # - Nome/Razão Social (obrigatorio)
   nfe_attr :razao_social
@@ -55,20 +52,12 @@ class Cliente
 
   def initialize
     @isento_icms   = false
-    @endereco_pais = Parametros::CODIGO_BRASIL
+    @endereco_pais = Nfe::CODIGO_BRASIL
     @tipo_documento= 'CNPJ'
   end
 
   def to_s
     "#{@tipo_documento} #{@numero_documento}"
   end
-
-  def attributes #FIXME pensar em como pegar os atributos direto, isso se tiver jeito
-    #atributos = self.public_methods.map{ |metodo| metodo if metodo.include? '=' }
-    #atributos.each {|att| att.to_s.gsub('=', '')}
-    #@attributes = atributos
-    @attributes = {'endereco_municipio'=> endereco_municipio, 'endereco_uf' => endereco_uf}
-  end
-
 
 end

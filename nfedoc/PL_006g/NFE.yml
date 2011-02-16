@@ -796,7 +796,7 @@
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-#todo cobr
+#todo cobr ok
   -cobr
               -cobr" minOccurs="0">
                 <xs:annotation>
@@ -1282,7 +1282,6 @@
 
 #TODO 1 Tlocal
   -TLocal">
-    <xs:sequence>
       <xs:choice>
         -CNPJ" type="TCnpjOpc">
         -CPF" type="TCpf">

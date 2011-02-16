@@ -1,8 +1,6 @@
 #coding: utf-8
-
 module NfeEntity
-
-
+  
   def self.included(base)
     base.extend ClassMethods
     base.class_eval {  @xml_params ||= [] }
@@ -25,7 +23,7 @@ module NfeEntity
   end
 
   def attributes
-    @xml_params #die('Método attributes não sobrescrito na entidade')
+    @xml_params
   end
 
   def to_nfe_format
