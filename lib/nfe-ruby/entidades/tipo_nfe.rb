@@ -1,20 +1,11 @@
-require 'nfe-ruby/entidades/nfe_entity'
+require 'entidade_nfe'
 
 #Tipo da NF-e processada
 #Corresponde a uma definicao de um tipo de entidade complexa
-class TipoNfe
-  include NfeEntity
+class TipoNfe < EntidadeNFe
 
   nfe_attr :NFe
   nfe_attr :protNFe
   nfe_attr :versao
-
-  def attributes
-    @attributes = {
-        'NFe' => nfe,
-        'protNFe' => protNFe.to_nfe_format,
-        'versao' => versao
-    }
-  end
 
 end

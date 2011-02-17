@@ -1,24 +1,24 @@
 class Destinatario
-  include NfeEntity
+  include EntidadeNFe
 
   #Cnj ou cpf
-  attr_accessor :cnpj
+  nfe_attr :cnpj
 
   #Cpf ou cnpj
-  attr_accessor :cpf
+  nfe_attr :cpf
 
-  attr_accessor :xnome
+  nfe_attr :xnome
 
-  attr_accessor :endereco
+  nfe_attr :endereco
 
-  attr_accessor :ie
+  nfe_attr :ie
 
   #Inscrição na SUFRAMA (Obrigatório nas operações com as áreas com benefícios de
   #incentivos fiscais sob controle da SUFRAMA) PL_005d - 11/08/09 - alterado para aceitar 8 ou 9
   #dígitos
-  attr_accessor :isuf
+  nfe_attr :isuf
 
-  attr_accessor :email
+  nfe_attr :email
 
   def attributes
     @attributes = {

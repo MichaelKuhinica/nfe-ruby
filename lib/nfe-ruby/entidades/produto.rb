@@ -1,57 +1,57 @@
 
 # E provavel que esta entidade sera descartada, porque?
 class Produto
-  include NfeEntity
+  include EntidadeNFe
 
   # - Descricao (obrigatorio)
-  attr_accessor :descricao
+  nfe_attr :descricao
 
   # - Codigo (obrigatorio) - nao pode ser alterado quando em edicao
-  attr_accessor :codigo
+  nfe_attr :codigo
 
   # - EAN
-  attr_accessor :ean
+  nfe_attr :ean
 
   # - EAN Unid. Tributavel
-  attr_accessor :ean_unidade_tributavel
+  nfe_attr :ean_unidade_tributavel
 
   # - EX TIPI
-  attr_accessor :ex_tipi
+  nfe_attr :ex_tipi
 
   # - Genero
-  attr_accessor :genero
+  nfe_attr :genero
 
   # - NCM
-  attr_accessor :ncm
+  nfe_attr :ncm
 
   # - Unid. Com.
-  attr_accessor :unidade_comercial
+  nfe_attr :unidade_comercial
 
   # - Valor Unitario Com.
-  attr_accessor :valor_unitario_comercial
+  nfe_attr :valor_unitario_comercial
 
   # - Unid. Trib.
-  attr_accessor :unidade_tributavel
+  nfe_attr :unidade_tributavel
 
   # - Qtd. Trib.
-  attr_accessor :quantidade_tributavel
+  nfe_attr :quantidade_tributavel
 
   # - Valor Unitario Trib.
-  attr_accessor :valor_unitario_tributavel
+  nfe_attr :valor_unitario_tributavel
 
   # Impostos
   # - ICMS (lista 1 para * / ManyToManyField)
-  attr_accessor :icms
+  nfe_attr :icms
 
   # - IPI
   # - Classe de Enquadramento (cigarros e bebidas)
-  attr_accessor :ipi_classe_enquadramento
+  nfe_attr :ipi_classe_enquadramento
 
   # - Codigo de Enquadramento Legal
-  attr_accessor :ipi_codigo_enquadramento_legal
+  nfe_attr :ipi_codigo_enquadramento_legal
 
   # - CNPJ do Produtor
-  attr_accessor :ipi_cnpj_produtor
+  nfe_attr :ipi_cnpj_produtor
 
   def initialize
     @icms = []

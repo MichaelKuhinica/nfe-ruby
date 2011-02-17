@@ -1,32 +1,32 @@
+require 'entidade_nfe'
 
-class ProdutoICMS
-  include NfeEntity
+class ProdutoICMS < EntidadeNFe
 
   # - Tipo de Tributacao (seleciona de lista) - ICMS_TIPOS_TRIBUTACAO
-  attr_accessor :tipo_tributacao
+  nfe_attr :tipo_tributacao
 
   # - Origem (seleciona de lista) - ICMS_ORIGENS
-  attr_accessor :origem
+  nfe_attr :origem
 
   # - Modalidade de determinacao da Base de Calculo (seleciona de lista) - ICMS_MODALIDADES
-  attr_accessor :modalidade
+  nfe_attr :modalidade
 
   # - Aliquota ICMS
-  attr_accessor :aliquota
+  nfe_attr :aliquota
 
   # - Percentual de reducao da Base de Calculo
-  attr_accessor :percentual_reducao
+  nfe_attr :percentual_reducao
 
   # - Modalidade de determinacao da Base de Calculo do ICMS ST (seleciona de lista) - ICMS_MODALIDADES
-  attr_accessor :st_modalidade
+  nfe_attr :st_modalidade
 
   # - Aliquota ICMS ST
-  attr_accessor :st_aliquota
+  nfe_attr :st_aliquota
 
   # - Percentual de reducao do ICMS ST
-  attr_accessor :st_percentual_reducao
+  nfe_attr :st_percentual_reducao
 
   # - Percentual da margem de Valor Adicionado ICMS ST
-  attr_accessor :st_percentual_margem_valor_adicionado
+  nfe_attr :st_percentual_margem_valor_adicionado
 
 end

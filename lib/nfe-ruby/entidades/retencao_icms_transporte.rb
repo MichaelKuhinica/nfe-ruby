@@ -1,36 +1,25 @@
-require 'entidades/nfe_entity'
+require 'entidade_nfe'
 
 #elemento <retTransp> do elemento <transp> da nfe
-class RetencaoIcmsTransporte
-  include NfeEntity
+class RetencaoIcmsTransporte < EntidadeNFe
 
   #valor do Serviço
-  attr_accessor :vServ
+  nfe_attr :vServ
 
   #BC da Retenção do ICMS
-  attr_accessor :vBCRet
+  nfe_attr :vBCRet
 
   #Alíquota da Retenção
-  attr_accessor :pICMSRet
+  nfe_attr :pICMSRet
 
   #Valor do ICMS Retido
-  attr_accessor :vICMSRet
+  nfe_attr :vICMSRet
 
   #Código Fiscal de Operações e Prestações // PL_006f - alterado para
   #permitir somente CFOP de transportes
-  attr_accessor :cfop
+  nfe_attr :CFOP
 
   #Código do Município de Ocorrência do Fato Gerador (utilizar a tabela do IBGE)
-  attr_accessor :cMunFG
+  nfe_attr :cMunFG
 
-  def attributes
-    @attributes = {
-        'vServ'    => vServ.to_s,
-        'vBCRet'   => vBCRet.to_s,
-        'pICMSRet' => pICMSRet.to_s,
-        'vICMSRet' => vICMSRet.to_s,
-        'CFOP'     => cfop,
-        'cMunFG'   => cMunFG
-    }
-  end
 end

@@ -1,14 +1,8 @@
-class Veiculo
+require 'entidade_nfe'
+
+#TVeiculo
+class Veiculo < EntidadeNFe
   nfe_attr :placa
-  nfe_attr :uf
-  nfe_attr :rntc
-
-  def attributes
-    @attributes = {
-        :placa => placa,
-        'UF' => uf,
-        'RNTC' => rntc
-    }
-  end
-
+  nfe_attr :UF
+  nfe_attr :RTNC
 end

@@ -1,12 +1,12 @@
-require 'entidades/nfe_entity'
+require 'entidade_nfe'
 
 #Representa o elemento cobr da nota fiscal
 class Cobranca
-  include NfeEntity
+  include EntidadeNFe
 
-  attr_accessor :fatura #objeto Fatura
+  nfe_attr :fatura #objeto Fatura
 
-  attr_accessor :duplicatas #n objetos Duplicata
+  nfe_attr :duplicatas #n objetos Duplicata
 
   def attributes
     @attributes = {

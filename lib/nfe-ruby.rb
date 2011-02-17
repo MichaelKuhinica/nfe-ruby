@@ -17,6 +17,7 @@ require 'nfe-ruby/entidades/transportadora'
 =end
 
 require 'nfe-ruby/config/params'
+require 'nfe-ruby/entidades/entidade_nfe'
 require 'nfe-ruby/entidades/endereco_emitente'
 
 x = EnderecoEmitente.new

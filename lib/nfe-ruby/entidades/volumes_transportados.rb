@@ -1,28 +1,27 @@
-require 'entidades/nfe_entity'
+require 'entidade_nfe'
 
 #Dados dos volumes, representa o elemento vol do elemento transp da nfe
-class VolumesTransportados
-  include NfeEntity
+class VolumesTransportados < EntidadeNFe
 
   #qtd de volumes transportados
-  attr_accessor :qVol
+  nfe_attr :qVol
 
   #Espécie dos volumes transportados
-  attr_accessor :esp
+  nfe_attr :esp
 
   #Marca dos volumes transportados
-  attr_accessor :marca
+  nfe_attr :marca
 
   #numeracao dos volumes trasnportados
-  attr_accessor :nVol
+  nfe_attr :nVol
 
   #Peso liquido em Kg
-  attr_accessor :pesoL
+  nfe_attr :pesoL
 
   #peso bruto em Kg
-  attr_accessor :pesoB
+  nfe_attr :pesoB
 
   #numero dos lacres
-  attr_accessor :lacres
+  nfe_attr :lacres
 
 end

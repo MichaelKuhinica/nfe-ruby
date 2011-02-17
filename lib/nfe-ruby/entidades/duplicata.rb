@@ -5,13 +5,13 @@ require "entidades/nfe_entity"
 class Duplicata
 
   #Numero da duplicata
-  attr_accessor :nDup
+  nfe_attr :nDup
 
   #Data de vencimento da duplicata
-  attr_accessor :dVenc
+  nfe_attr :dVenc
 
   #Valor da duplicata
-  attr_accessor :vDup
+  nfe_attr :vDup
 
   def attributes
     @attributes = {

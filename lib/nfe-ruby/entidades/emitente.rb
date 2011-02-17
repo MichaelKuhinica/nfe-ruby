@@ -2,45 +2,45 @@
 
 class Emitente
   # - Nome/Razao Social (obrigatório)
-  attr_accessor :razao_social
+  nfe_attr :razao_social
 
   # - Nome Fantasia
-  attr_accessor :nome_fantasia
+  nfe_attr :nome_fantasia
 
   # - Nome
-  attr_accessor :nome
+  nfe_attr :nome
 
   # - CNPJ (obrigatorio ou CPF)
-  attr_accessor :cnpj
+  nfe_attr :cnpj
 
   # - CPF (obrigatorio ou CNPJ)
-  attr_accessor :cpf
+  nfe_attr :cpf
 
   # - Inscricao Estadual (obrigatorio)
-  attr_accessor :inscricao_estadual
+  nfe_attr :inscricao_estadual
 
   # - CNAE Fiscal
-  attr_accessor :cnae_fiscal
+  nfe_attr :cnae_fiscal
 
   # - Inscricao Municipal
-  attr_accessor :inscricao_municipal
+  nfe_attr :inscricao_municipal
 
   # - Inscricao Estadual (Subst. Tributario)
-  attr_accessor :inscricao_estadual_subst_tributaria
+  nfe_attr :inscricao_estadual_subst_tributaria
 
   # Logotipo
-  attr_accessor :logotipo
+  nfe_attr :logotipo
 
   #Grupo de informações de interesse da Prefeitura
-  attr_accessor :grupo_informacoes_interesse_prefeitura
+  nfe_attr :grupo_informacoes_interesse_prefeitura
 
   #CNAE fiscal
-  attr_accessor :cnae
+  nfe_attr :cnae
 
   #Código de Regime Tributário.(Obrigatorio)
-  attr_accessor :crt
+  nfe_attr :crt
 
-  attr_accessor :endereco_emitente
+  nfe_attr :endereco_emitente
 
   def endereco_emitente=(tEnderEmi)
     @endereco_emitente = tEnderEmi if tEnderEmi.is_a? EnderecoEmitente

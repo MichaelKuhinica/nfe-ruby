@@ -1,36 +1,36 @@
-require 'entidades/nfe_entity'
+require 'entidade_nfe'
 
 #Representa o tipo TLocal
 #Tipo Dados do Local de Retirada ou Entrega // 24/10/08 - tamanho mínimo // v2.0
 class Local
-  include NfeEntity
+  include EntidadeNFe
 
   #cnpj ou cpf
-  attr_accessor :cnpj
+  nfe_attr :cnpj
 
   #cpf ou cnpj
-  attr_accessor :cpf
+  nfe_attr :cpf
 
   #logradouro
-  attr_accessor :xlgr
+  nfe_attr :xlgr
 
   #numero
-  attr_accessor :nro
+  nfe_attr :nro
 
   #complemento
-  attr_accessor :xcpl
+  nfe_attr :xcpl
 
   #bairro
-  attr_accessor :xbairro
+  nfe_attr :xbairro
 
   #codigo municipio tabela IBGE
-  attr_accessor :cmun
+  nfe_attr :cmun
 
   #nome municipio
-  attr_accessor :xmun
+  nfe_attr :xmun
 
   #UF
-  attr_accessor :uf
+  nfe_attr :uf
 
   def attributes
     @attributes = {

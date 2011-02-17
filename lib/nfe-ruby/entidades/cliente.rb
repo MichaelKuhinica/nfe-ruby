@@ -1,53 +1,53 @@
 # -*- coding: utf-8 -*-
 require 'nfe-ruby/config/params'
 
-class Cliente < NfeEntity
+class Cliente < EntidadeNFe
 
   # - Nome/Razão Social (obrigatorio)
   nfe_attr :razao_social
 
   # - Tipo de Documento (obrigatorio) - default CNPJ - TIPOS_DOCUMENTO
-  attr_accessor :tipo_documento
+  nfe_attr :tipo_documento
 
   # - Numero do Documento (obrigatorio)
-  attr_accessor :numero_documento
+  nfe_attr :numero_documento
 
   # - Inscricao Estadual
-  attr_accessor :inscricao_estadual
+  nfe_attr :inscricao_estadual
 
   # - Inscricao SUFRAMA
-  attr_accessor :inscricao_suframa
+  nfe_attr :inscricao_suframa
 
   # - Isento do ICMS (Sim/Nao)
-  attr_accessor :isento_icms
+  nfe_attr :isento_icms
 
   # Endereco
   # - Logradouro (obrigatorio)
-  attr_accessor :endereco_logradouro
+  nfe_attr :endereco_logradouro
 
   # - Numero (obrigatorio)
-  attr_accessor :endereco_numero
+  nfe_attr :endereco_numero
 
   # - Complemento
-  attr_accessor :endereco_complemento
+  nfe_attr :endereco_complemento
 
   # - Bairro (obrigatorio)
-  attr_accessor :endereco_bairro
+  nfe_attr :endereco_bairro
 
   # - CEP
-  attr_accessor :endereco_cep
+  nfe_attr :endereco_cep
 
   # - Pais (seleciona de lista)
-  attr_accessor :endereco_pais
+  nfe_attr :endereco_pais
 
   # - UF (obrigatorio)
-  attr_accessor :endereco_uf
+  nfe_attr :endereco_uf
 
   # - Municipio (obrigatorio)
-  attr_accessor :endereco_municipio
+  nfe_attr :endereco_municipio
 
   # - Telefone
-  attr_accessor :endereco_telefone
+  nfe_attr :endereco_telefone
 
   def initialize
     @isento_icms   = false

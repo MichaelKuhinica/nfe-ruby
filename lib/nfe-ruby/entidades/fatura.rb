@@ -1,21 +1,21 @@
-require 'entidades/nfe_entity'
+require 'entidade_nfe'
 
 #elemento fatura do elemento cobr da nfe
 #Contém dados da fatura
 class Fatura
-  inport NfeEntity
+  inport EntidadeNFe
 
   #Número da fatura (1 a 60 caracteres)
-  attr_accessor :nFat
+  nfe_attr :nFat
 
   #Valor original da fatura
-  attr_accessor :vOrig
+  nfe_attr :vOrig
 
   #Valor do desconto da fatura
-  attr_accessor :vDesc
+  nfe_attr :vDesc
 
   #Valor liquido da fatura
-  attr_accessor :vLiq
+  nfe_attr :vLiq
 
   def attributes
     @attributes = {

@@ -1,23 +1,22 @@
-require 'entidades/nfe_entity'
+require 'entidade_nfe'
 
 #elemento transp da nfe
-class Transporte
-  include NfeEntity
+class Transporte < EntidadeNFe
 
-  attr_accessor :modFrete
+  nfe_attr :modFrete
 
-  attr_accessor :transportadora_simples
+  nfe_attr :transportadora_simples
 
-  attr_accessor :retTransp
+  nfe_attr :retTransp
 
   #ou veicTransp e reboque
-  attr_accessor :veicTransp, :reboque
+  nfe_attr :veicTransp, :reboque
 
   #ou vagao
-  attr_accessor :vagao
+  nfe_attr :vagao
 
   #ou balsa
-  attr_accessor :balsa
+  nfe_attr :balsa
 
   def attributes
     @attributes = {
@@ -33,9 +32,9 @@ class Transporte
 
   def modfrete=(valor)
     if MODALIDADES_FRETE.include? valor
-      modfrete = valor
+      @modFrete = valor
     else
-      raise "Modalidade não existente"
+      raise "Modalidade de frete não existente"
     end
   end
 end

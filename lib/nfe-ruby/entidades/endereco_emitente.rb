@@ -1,13 +1,11 @@
 #coding: utf-8
-require 'nfe-ruby/config/params'
-require 'nfe-ruby/entidades/nfe_entity'
 
-class EnderecoEmitente < NfeEntity
+class EnderecoEmitente < EntidadeNFe
 
 #  validates_length_of :xLgr, :nro, :xCpl, :xBairro, :xMun, :in => 2...60
 #  validates :CEP, :format => {:with => /[0-9]{8}/} #sem traços, somente numeros
 #  validates :fone, :format => {:with => /[0-9]{6,14}/} #DDD + número do telefone
-  
+
   nfe_attr :xLgr
   nfe_attr :nro
   nfe_attr :xCpl

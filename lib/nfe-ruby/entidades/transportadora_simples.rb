@@ -1,30 +1,19 @@
 import 'entidades/nfe_entity'
 
 #representa elemento <transporta> do elemento <transp> da nfe
-class TransportadoraSimples
+class TransportadoraSimples < EntidadeNFe
 
   #ou cpf ou cnpj
-  attr_accessor :cpf, :cnpj
+  nfe_attr :cpf, :cnpj
 
-  attr_accessor :xNome
+  nfe_attr :xNome
 
-  attr_accessor :ie
+  nfe_attr :IE
 
-  attr_accessor :xEnder
+  nfe_attr :xEnder
 
-  attr_accessor :xMun
+  nfe_attr :xMun
 
-  attr_accessor :UF
+  nfe_attr :UF
 
-  def attributes
-    @attributes = {
-        'cpf'    => cpf,
-        'cnpj'   => cnpj,
-        'xNome'  => xNome,
-        'IE'     => ie,
-        'xEnder' => xEnder,
-        'xMun'   => xMun,
-        'UF'     => UF
-    }
-  end
 end

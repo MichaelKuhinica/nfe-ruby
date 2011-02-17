@@ -1,27 +1,28 @@
-class Transportadora
-  include NfeEntity
+require 'entidade_nfe'
+
+class Transportadora < EntidadeNFe
   
   # - Nome/Razão Social (obrigatorio)
-  attr_accessor :razao_social
+  nfe_attr :razao_social
 
   # - Tipo de Documento (obrigatorio) - default CNPJ
-  attr_accessor :tipo_documento
+  nfe_attr :tipo_documento
 
   # - Numero do Documento (obrigatorio)
-  attr_accessor :numero_documento
+  nfe_attr :numero_documento
 
   # - Inscricao Estadual
-  attr_accessor :inscricao_estadual
+  nfe_attr :inscricao_estadual
 
   # Endereco
   # - Logradouro (obrigatorio)
-  attr_accessor :endereco_logradouro
+  nfe_attr :endereco_logradouro
 
   # - UF (obrigatorio)
-  attr_accessor :endereco_uf
+  nfe_attr :endereco_uf
 
   # - Municipio (obrigatorio)
-  attr_accessor :endereco_municipio
+  nfe_attr :endereco_municipio
 
   def to_s
     "#{@tipo_documento} #{@numero_documento}"

@@ -1,60 +1,60 @@
 #coding: utf-8
 
 class NotaFiscal
-  include NfeEntity
-  attr_accessor :status
+  include EntidadeNFe
+  nfe_attr :status
 
   # Código numérico aleatório que compõe a chave de acesso
-  attr_accessor :codigo_numerico_aleatorio
+  nfe_attr :codigo_numerico_aleatorio
 
   # Digito verificador do codigo numerico aleatorio
-  attr_accessor :dv_codigo_numerico_aleatorio
+  nfe_attr :dv_codigo_numerico_aleatorio
 
   # Nota Fisca eletronica
   # - Modelo (formato: NN)
-  attr_accessor :modelo
+  nfe_attr :modelo
 
   # - Serie (obrigatorio - formato: NNN)
-  attr_accessor :serie
+  nfe_attr :serie
 
   # - Numero NF (obrigatorio)
-  attr_accessor :numero_nf
+  nfe_attr :numero_nf
 
   # - Data da Emissao (obrigatorio)
-  attr_accessor :data_emissao
+  nfe_attr :data_emissao
 
   # - Natureza da Operacao (obrigatorio)
-  attr_accessor :natureza_operacao
+  nfe_attr :natureza_operacao
 
   # - Tipo do Documento (obrigatorio - seleciona de lista) - NF_TIPOS_DOCUMENTO
-  attr_accessor :tipo_documento
+  nfe_attr :tipo_documento
 
   # - Processo de emissão da NF-e (obrigatorio - seleciona de lista) - NF_PROCESSOS_EMISSAO
-  attr_accessor :processo_emissao
+  nfe_attr :processo_emissao
 
   # - Versao do processo de emissão da NF-e
-  attr_accessor :versao_processo_emissao
+  nfe_attr :versao_processo_emissao
 
   # - Tipo impressao DANFE (obrigatorio - seleciona de lista) - NF_TIPOS_IMPRESSAO_DANFE
-  attr_accessor :tipo_impressao_danfe
+  nfe_attr :tipo_impressao_danfe
 
   # - Data de saida/entrada
-  attr_accessor :data_saida_entrada
+  nfe_attr :data_saida_entrada
 
   # - Forma de pagamento (obrigatorio - seleciona de lista) - NF_FORMAS_PAGAMENTO
-  attr_accessor :forma_pagamento
+  nfe_attr :forma_pagamento
 
   # - Forma de emissao (obrigatorio - seleciona de lista) - NF_FORMAS_EMISSAO
-  attr_accessor :forma_emissao
+  nfe_attr :forma_emissao
 
   # - Finalidade de emissao (obrigatorio - seleciona de lista) - NF_FINALIDADES_EMISSAO
-  attr_accessor :finalidade_emissao
+  nfe_attr :finalidade_emissao
 
   # - UF - converter para codigos em CODIGOS_ESTADOS
-  attr_accessor :uf
+  nfe_attr :uf
 
   # - Municipio de ocorrencia
-  attr_accessor :municipio
+  nfe_attr :municipio
 
   # - Digest value da NF-e (somente leitura)
   attr_reader :digest_value
@@ -75,35 +75,35 @@ class NotaFiscal
   attr_reader :data
 
   # - Notas Fiscais Referenciadas (lista 1 para * / ManyToManyField)
-  attr_accessor :notas_fiscais_referenciadas
+  nfe_attr :notas_fiscais_referenciadas
 
   # - Emitente (CNPJ ???)
-  attr_accessor :emitente
+  nfe_attr :emitente
 
   # - Destinatario/Remetente
   # - Identificacao (seleciona de Clientes)
-  attr_accessor :destinatario_remetente
+  nfe_attr :destinatario_remetente
 
   # - Entrega (XXX sera possivel ter entrega e retirada ao mesmo tempo na NF?)
-  attr_accessor :entrega
+  nfe_attr :entrega
 
   # - Retirada
-  attr_accessor :retirada
+  nfe_attr :retirada
 
   # - Local Retirada/Entrega
   # - Local de retirada diferente do emitente (Sim/Nao)
-  attr_accessor :local_retirada_diferente_emitente
+  nfe_attr :local_retirada_diferente_emitente
 
   # - Local de entrega diferente do destinatario (Sim/Nao)
-  attr_accessor :local_entrega_diferente_destinatario
+  nfe_attr :local_entrega_diferente_destinatario
 
   # - Produtos e Servicos (lista 1 para * / ManyToManyField)
-  attr_accessor :produtos_e_servicos
+  nfe_attr :produtos_e_servicos
 
   # Totais
   # - ICMS
   # - Base de calculo (somente leitura)
-  attr_accessor :totais_icms_base_calculo
+  nfe_attr :totais_icms_base_calculo
 
   # - Total do ICMS (somente leitura)
   attr_reader :totais_icms_total
@@ -139,133 +139,133 @@ class NotaFiscal
   attr_reader :totais_icms_cofins
 
   # - Outras despesas acessorias
-  attr_accessor :totais_icms_outras_despesas_acessorias
+  nfe_attr :totais_icms_outras_despesas_acessorias
 
   # - Total da nota
-  attr_accessor :totais_icms_total_nota
+  nfe_attr :totais_icms_total_nota
 
   # - ISSQN
   # - Base de calculo do ISS
-  attr_accessor :totais_issqn_base_calculo_iss
+  nfe_attr :totais_issqn_base_calculo_iss
 
   # - Total do ISS
-  attr_accessor :totais_issqn_total_iss
+  nfe_attr :totais_issqn_total_iss
 
   # - PIS sobre servicos
-  attr_accessor :totais_issqn_pis
+  nfe_attr :totais_issqn_pis
 
   # - COFINS sobre servicos
-  attr_accessor :totais_issqn_cofins
+  nfe_attr :totais_issqn_cofins
 
   # - Total dos servicos sob nao-incidencia ou nao tributados pelo ICMS
-  attr_accessor :totais_issqn_total
+  nfe_attr :totais_issqn_total
 
   # - Retencao de Tributos
   # - Valor retido de PIS
-  attr_accessor :totais_retencao_valor_retido_pis
+  nfe_attr :totais_retencao_valor_retido_pis
 
   # - Valor retido de COFINS
-  attr_accessor :totais_retencao_valor_retido_cofins
+  nfe_attr :totais_retencao_valor_retido_cofins
 
   # - Valor retido de CSLL
-  attr_accessor :totais_retencao_valor_retido_csll
+  nfe_attr :totais_retencao_valor_retido_csll
 
   # - Base de calculo do IRRF
-  attr_accessor :totais_retencao_base_calculo_irrf
+  nfe_attr :totais_retencao_base_calculo_irrf
 
   # - Valor retido do IRRF
-  attr_accessor :totais_retencao_valor_retido_irrf
+  nfe_attr :totais_retencao_valor_retido_irrf
 
   # - BC da ret. da Prev. Social
-  attr_accessor :totais_retencao_bc_retencao_previdencia_social
+  nfe_attr :totais_retencao_bc_retencao_previdencia_social
 
   # - Retencao da Prev. Social
-  attr_accessor :totais_retencao_retencao_previdencia_social
+  nfe_attr :totais_retencao_retencao_previdencia_social
 
   # Transporte
   # - Modalidade do Frete (obrigatorio - seleciona de lista) - MODALIDADES_FRETE
   # - 0 - Por conta do emitente
   # - 1 - Por conta do destinatario
-  attr_accessor :transporte_modalidade_frete
+  nfe_attr :transporte_modalidade_frete
 
   # - Transportador (seleciona de Transportadoras)
-  attr_accessor :transporte_transportadora
+  nfe_attr :transporte_transportadora
 
   # - Retencao do ICMS
   # - Base de calculo
-  attr_accessor :transporte_retencao_icms_base_calculo
+  nfe_attr :transporte_retencao_icms_base_calculo
 
   # - Aliquota
-  attr_accessor :transporte_retencao_icms_aliquota
+  nfe_attr :transporte_retencao_icms_aliquota
 
   # - Valor do servico
-  attr_accessor :transporte_retencao_icms_valor_servico
+  nfe_attr :transporte_retencao_icms_valor_servico
 
   # - UF
-  attr_accessor :transporte_retencao_icms_uf
+  nfe_attr :transporte_retencao_icms_uf
 
   # - Municipio
-  attr_accessor :transporte_retencao_icms_municipio
+  nfe_attr :transporte_retencao_icms_municipio
 
   # - CFOP
-  attr_accessor :transporte_retencao_icms_cfop
+  nfe_attr :transporte_retencao_icms_cfop
 
   # - ICMS retido
-  attr_accessor :transporte_retencao_icms_retido
+  nfe_attr :transporte_retencao_icms_retido
 
   # - Veiculo
   # - Placa
-  attr_accessor :transporte_veiculo_placa
+  nfe_attr :transporte_veiculo_placa
 
   # - RNTC
-  attr_accessor :transporte_veiculo_rntc
+  nfe_attr :transporte_veiculo_rntc
 
   # - UF
-  attr_accessor :transporte_veiculo_uf
+  nfe_attr :transporte_veiculo_uf
 
   # - Reboque
   # - Placa
-  attr_accessor :transporte_reboque_placa
+  nfe_attr :transporte_reboque_placa
 
   # - RNTC
-  attr_accessor :transporte_reboque_rntc
+  nfe_attr :transporte_reboque_rntc
 
   # - UF
-  attr_accessor :transporte_reboque_uf
+  nfe_attr :transporte_reboque_uf
 
   # - Volumes (lista 1 para * / ManyToManyField)
-  attr_accessor :transporte_volumes
+  nfe_attr :transporte_volumes
 
   # Cobranca
   # - Fatura
   # - Numero
-  attr_accessor :fatura_numero
+  nfe_attr :fatura_numero
 
   # - Valor original
-  attr_accessor :fatura_valor_original
+  nfe_attr :fatura_valor_original
 
   # - Valor do desconto
-  attr_accessor :fatura_valor_desconto
+  nfe_attr :fatura_valor_desconto
 
   # - Valor liquido
-  attr_accessor :fatura_valor_liquido
+  nfe_attr :fatura_valor_liquido
 
   # - Duplicatas (lista 1 para * / ManyToManyField)
-  attr_accessor :duplicatas
+  nfe_attr :duplicatas
 
   # Informacoes Adicionais
   # - Informacoes Adicionais
   # - Informacoes adicionais de interesse do fisco
-  attr_accessor :informacoes_adicionais_interesse_fisco
+  nfe_attr :informacoes_adicionais_interesse_fisco
 
   # - Informacoes complementares de interesse do contribuinte
-  attr_accessor :informacoes_complementares_interesse_contribuinte
+  nfe_attr :informacoes_complementares_interesse_contribuinte
 
   # - Observacoes do Contribuinte (lista 1 para * / ManyToManyField)
-  attr_accessor :observacoes_contribuinte
+  nfe_attr :observacoes_contribuinte
 
   # - Processo Referenciado (lista 1 para * / ManyToManyField)
-  attr_accessor :processos_referenciados
+  nfe_attr :processos_referenciados
 
 
   STATUS                = {

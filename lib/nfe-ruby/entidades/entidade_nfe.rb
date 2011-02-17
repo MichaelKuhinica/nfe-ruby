@@ -1,6 +1,6 @@
 #coding: utf-8
 
-class NfeEntity
+class EntidadeNFe
 
   @@xml_params = []
 
@@ -35,20 +35,22 @@ class NfeEntity
       return ""
     end
     unless value.is_a? Hash
-      "<#{key}>#{value}<#{key}/>" unless value.nil?
+      "<#{key}>#{value}<#{key}/>\n" unless value.to_s.empty?
     else
       <<-XML
-        <#{key}>
-            hash_converter(value)
-        </#{key}>
+      <#{key}>
+        #{hash_converter(value)}
+      </#{key}>
       XML
     end
   end
 
   def hash_converter(hash)
-    hash.each_pair do |key, value|
-      convert_to_xml(key, value)
+    xml = ''
+    hash.each do |key, value|
+      xml += convert_to_xml(key, value)
     end
+    xml
   end
 
 

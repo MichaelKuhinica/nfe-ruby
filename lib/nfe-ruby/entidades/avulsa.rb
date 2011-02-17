@@ -1,60 +1,41 @@
 # -*- coding: utf-8 -*-
-require 'entidades/nfe_entity'
 
-module NFe
-class Avulsa
-  include NfeEntity
+class Avulsa < EntidadeNFe
 
   #CNPJ do Órgão emissor
-  attr_accessor :cnpj
+  nfe_attr :CNPJ
 
   #Órgão emitente
-  attr_accessor :xorgao
+  nfe_attr :xOrgao
 
   #Matrícula do agente
-  attr_accessor :matr
+  nfe_attr :matr
 
   #Nome do agente
-  attr_accessor :xagente
+  nfe_attr :xAgente
 
   #Telefone
-  attr_accessor :fone
+  nfe_attr :fone
 
   #UF
-  attr_accessor :uf
+  nfe_attr :UD
 
   #Número do Documento de Arrecadação de Receita
-  attr_accessor :ndar
+  nfe_attr :nDar
 
   #Data de emissão do DAR (AAAA-MM-DD)
-  attr_accessor :demi
+  nfe_attr :dEmi
 
   #Valor Total constante no DAR
-  attr_accessor :vdar
+  nfe_attr :vDar
 
   #Repartição Fiscal emitente
-  attr_accessor :repemi
+  nfe_attr :repEmi
 
   #Data de pagamento do DAR (AAAA-MM-DD)
-  attr_accessor :dpag
+  nfe_attr :dPag
 
   def attributes
-    @attributes = {
-        'avulsa' => {
-            'CNPJ'    => cnpj,
-            'xOrgao'  => xorgao,
-            'matr'    => matr,
-            'xAgente' => xagente,
-            'fone'    => fone,
-            'UF'      => uf,
-            'nDAR'    => ndar,
-            'dEmi'    => demi,
-            'vDAR'    => vdar,
-            'repEmi'  => repemi,
-            'dPag'    => dpag
-        }
-    }
+    { :avulsa => super }
   end
-
-end
 end
