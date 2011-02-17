@@ -1,5 +1,6 @@
-class Destinatario
-  include EntidadeNFe
+require '../entidade_nfe'
+
+class Destinatario < EntidadeNFe
 
   #Cnj ou cpf
   nfe_attr :cnpj

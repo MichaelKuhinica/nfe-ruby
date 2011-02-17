@@ -1,8 +1,7 @@
 require 'entidade_nfe'
 
 #Representa o elemento cobr da nota fiscal
-class Cobranca
-  include EntidadeNFe
+class Cobranca < EntidadeNFe
 
   nfe_attr :fatura #objeto Fatura
 

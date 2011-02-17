@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#TODO : onde fica o cliente na nfe?
 require 'nfe-ruby/config/params'
 
 class Cliente < EntidadeNFe

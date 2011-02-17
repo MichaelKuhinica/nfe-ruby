@@ -103,15 +103,6 @@ module Nfe
       9 => 'Sem frete'
   }
 
-  ORIGENS_PROCESSO        = [
-      'SEFAZ',
-      'Justica federal',
-      'Justica estadual',
-      'Secex/RFB',
-      'Outros',
-  ]
-
-
   CODIGOS_ESTADOS         = {
       :RO => '11',
       :AC => '12',
@@ -146,5 +137,13 @@ module Nfe
       1 => 'Producao',
       2 => 'Homologacao'
   }.freeze
+
+  ORIGEM_DO_PROCESSO = {
+      1 => 'SEFAZ',
+      2 => 'Justiça Federal',
+      3 => 'Justiça Estadual',
+      4 => 'Secex/RFB',
+      9 => 'Outros'
+  }
 
 end

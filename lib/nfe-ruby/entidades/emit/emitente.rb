@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
+require '../entidade_nfe'
 
-class Emitente
+class Emitente < EntidadeNFe
   # - Nome/Razao Social (obrigatório)
   nfe_attr :razao_social
 
