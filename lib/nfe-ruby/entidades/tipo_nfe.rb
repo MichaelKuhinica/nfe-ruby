@@ -1,7 +1,7 @@
 require 'entidade_nfe'
 
 #Tipo da NF-e processada
-#Corresponde a uma definicao de um tipo de entidade complexa
+#TNfeProc declarado no layout_nfe 2.0
 class TipoNfe < EntidadeNFe
 
   nfe_attr :NFe

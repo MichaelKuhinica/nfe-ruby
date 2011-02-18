@@ -5322,7 +5322,6 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-
   <xs:simpleType name="TCfop">
     <xs:annotation>
       <xs:documentation>Tipo CFOP // maio/2009 - Atualização do Ajuste SINIEF 14/2009</xs:documentation>

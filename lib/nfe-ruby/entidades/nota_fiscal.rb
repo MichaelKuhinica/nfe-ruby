@@ -14,9 +14,9 @@ class NotaFiscal < EntidadeNFe
   nfe_attr :transp #ok
   nfe_attr :cobr #ok
   nfe_attr :infAdic #ok
-  nfe_attr :exporta #TODO exporta
-  nfe_attr :compra #TODO compra
-  nfe_attr :cana #TODO cana
+  nfe_attr :exporta #ok
+  nfe_attr :compra #ok
+  nfe_attr :cana #ok
   nfe_attr :versao
   nfe_attr :Id
 
