@@ -1,6 +1,6 @@
 require '../entidade_nfe'
 
-#TODO: Elemento NFref do elemento ide da NFe
+#Elemento NFref do elemento ide da NFe
 class GrupoInformacoesNFe < EntidadeNFe
 
   #TChNFe

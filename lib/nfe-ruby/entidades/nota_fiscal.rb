@@ -3,7 +3,7 @@ require 'entidade_nfe'
 
 class NotaFiscal < EntidadeNFe
 
-  nfe_attr :ide #TODO ide
+  nfe_attr :ide #ide
   nfe_attr :emit #ok
   nfe_attr :avulsa #ok
   nfe_attr :dest #ok
@@ -17,8 +17,15 @@ class NotaFiscal < EntidadeNFe
   nfe_attr :exporta #ok
   nfe_attr :compra #ok
   nfe_attr :cana #ok
+
   nfe_attr :versao
   nfe_attr :Id
+
+  #ds:signature ???
+
+  def attributes
+    {:infNFe => super}
+  end
 
   STATUS                = {
       (EM_DIGITACAO = 1)     => 'Em Digitacao',

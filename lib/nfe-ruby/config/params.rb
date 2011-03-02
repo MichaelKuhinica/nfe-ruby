@@ -33,6 +33,13 @@ module Nfe
       '90' => 'ICMS 90 - Outras'
   }
 
+  CODIGO_DA_TRIBUTACAO = {
+      'N' => 'NORMAL',
+      'R' => 'RETIDA',
+      'S' => 'SUBSTITUTA',
+      'I' => 'ISENTA. (v.2.0)'
+  }
+
   ICMS_ORIGENS            = {
       0 => 'Nacional',
       1 => 'Estrangeira - Importacao Direta',

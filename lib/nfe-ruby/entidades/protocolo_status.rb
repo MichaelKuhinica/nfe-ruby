@@ -37,7 +37,7 @@ class ProtocoloStatus < EntidadeNFe
   #TODO o que significa isso? esta embaixo do Id
   #<xs:element ref="ds:Signature" minOccurs="0"/>
 
-  def tamb=(value)
+  def tpAmb=(value)
     if Nfe::TIPOS_DE_AMBIENTE.include? value
       @tamb = value
     else
