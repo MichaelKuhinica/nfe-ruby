@@ -33,9 +33,6 @@ module NFe
         end
       end
 
-
-
-
     end
 
   end
