@@ -20,19 +20,6 @@ module NFe
 
   CODIGO_BRASIL = '1058'
 
-  ICMS_TIPOS_TRIBUTACAO = {
-      '00' => 'ICMS 00 - Tributada integralmente',
-      '10' => 'ICMS 10 - Tributada com cobranca do ICMS por substituicao tributaria',
-      '20' => 'ICMS 20 - Com reducao da base de calculo',
-      '30' => 'ICMS 30 - Isenta ou nao tributada e com cobranca do ICMS por substituicao tributaria',
-      '40' => 'ICMS 40 - Isenta',
-      '41' => 'ICMS 41 - Nao tributada',
-      '50' => 'ICMS 50 - Suspensao',
-      '51' => 'ICMS 51 - Diferimento',
-      '60' => 'ICMS 60 - Cobrado anteriormente por substituicao tributaria',
-      '70' => 'ICMS 70 - Com reducao da base de calculo e cobranca do ICMS por substituicao tributaria',
-      '90' => 'ICMS 90 - Outras'
-  }
 
   CODIGO_DA_TRIBUTACAO = {
       'N' => 'NORMAL',
@@ -41,18 +28,6 @@ module NFe
       'I' => 'ISENTA. (v.2.0)'
   }
 
-  ICMS_ORIGENS = {
-      0 => 'Nacional',
-      1 => 'Estrangeira - Importacao Direta',
-      2 => 'Estrangeira - Adquirida no Mercado Interno'
-  }
-
-  ICMS_MODALIDADES = {
-      0 => 'Margem Valor Agregado',
-      1 => 'Pauta [valor]',
-      2 => 'Preco Tabelado Max. [valor]',
-      3 => 'Valor da Operacao'
-  }
 
   IPI_TIPOS_TRIBUTACAO = {
       '00' => 'IPI 00 - Entrada com recuperacao de credito',
@@ -204,7 +179,7 @@ module NFe
     end
 
     module COFINS
-      CST_ALIQ =  NFe::Impostos::PIS::CST_ALIQ
+      CST_ALIQ = NFe::Impostos::PIS::CST_ALIQ
 
       CST_NT = Impostos::PIS::CST_NT
 
@@ -222,17 +197,33 @@ module NFe
 #
 #
 #
-#      origem da mercadoria: 0 - Nacional
-#      1 - Estrangeira - Importação direta
-#      2 - Estrangeira - Adquirida no mercado interno
+      ORIGENS = {
+          0 => 'Nacional',
+          1 => 'Estrangeira - Importacao Direta',
+          2 => 'Estrangeira - Adquirida no Mercado Interno'
+      }
 
+      CST = {
+          '00' => 'ICMS 00 - Tributada integralmente',
+          '10' => 'ICMS 10 - Tributada com cobranca do ICMS por substituicao tributaria',
+          '20' => 'ICMS 20 - Com reducao da base de calculo',
+          '30' => 'ICMS 30 - Isenta ou nao tributada e com cobranca do ICMS por substituicao tributaria',
+          '40' => 'ICMS 40 - Isenta',
+          '41' => 'ICMS 41 - Nao tributada',
+          '50' => 'ICMS 50 - Suspensao',
+          '51' => 'ICMS 51 - Diferimento',
+          '60' => 'ICMS 60 - Cobrado anteriormente por substituicao tributaria',
+          '70' => 'ICMS 70 - Com reducao da base de calculo e cobranca do ICMS por substituicao tributaria',
+          '90' => 'ICMS 90 - Outras'
+      }
 
-      #CST
-        #Tributção  pelo ICMS 00 - Tributada integralmente
-  #Tributação pelo ICMS 10 - Tributada e com cobrança do ICMS por substituição tributária
-  #Tributção pelo ICMS  20 - Com redução de base de cálculo
+      ICMS_MODALIDADES = {
+          0 => 'Margem Valor Agregado',
+          1 => 'Pauta [valor]',
+          2 => 'Preco Tabelado Max. [valor]',
+          3 => 'Valor da Operacao'
+      }
 
-  #Tributação pelo ICMS 90 - Outras
     end
 
   end
