@@ -214,7 +214,25 @@ module NFe
     end
 
     module ICMS
+#      Modalidade de determinação da BC do ICMS:
+#      0 - Margem Valor Agregado (%);
+#      1 - Pauta (valor);
+#      2 - Preço Tabelado Máximo (valor);
+#      3 - Valor da Operação.
+#
+#
+#
+#      origem da mercadoria: 0 - Nacional
+#      1 - Estrangeira - Importação direta
+#      2 - Estrangeira - Adquirida no mercado interno
 
+
+      #CST
+        #Tributção  pelo ICMS 00 - Tributada integralmente
+  #Tributação pelo ICMS 10 - Tributada e com cobrança do ICMS por substituição tributária
+  #Tributção pelo ICMS  20 - Com redução de base de cálculo
+
+  #Tributação pelo ICMS 90 - Outras
     end
 
   end
