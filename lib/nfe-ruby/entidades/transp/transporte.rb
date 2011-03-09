@@ -1,4 +1,6 @@
-require 'entidade_nfe'
+#coding: utf-8
+
+require 'nfe-ruby/entidades/entidade_nfe'
 
 #elemento transp da nfe
 class Transporte < EntidadeNFe

@@ -39,7 +39,7 @@ class ProtocoloStatus < EntidadeNFe
 
   def tpAmb=(value)
     if Nfe::TIPOS_DE_AMBIENTE.include? value
-      @tamb = value
+      @tpAmb = value
     else
       raise 'Tipo de ambiente inválido'
     end

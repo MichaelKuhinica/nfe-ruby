@@ -1,4 +1,4 @@
-require '../entidade_nfe'
+require 'nfe-ruby/entidades/entidade_nfe'
 #det da nfe
 #Dados dos detalhes da NF-e
 class DetalhesNFe < EntidadeNFe

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-require '../entidade_nfe'
+require 'nfe-ruby/entidades/entidade_nfe'
 
 class Emitente < EntidadeNFe
   # - Nome/Razao Social (obrigatório)

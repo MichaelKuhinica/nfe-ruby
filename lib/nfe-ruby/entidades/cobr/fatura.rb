@@ -1,4 +1,4 @@
-require 'entidade_nfe'
+require 'nfe-ruby/entidades/entidade_nfe'
 
 #elemento fatura do elemento cobr da nfe
 #Contém dados da fatura

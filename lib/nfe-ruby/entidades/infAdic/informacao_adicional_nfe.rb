@@ -1,6 +1,6 @@
-require 'entidade_nfe'
-#elemento infAdic da nfe
+require 'nfe-ruby/entidades/entidade_nfe'
 
+#elemento infAdic da nfe
 class InformacaoAdicionalNfe < EntidadeNFe
 
   #Informações adicionais de interesse do Fisco (v2.0)

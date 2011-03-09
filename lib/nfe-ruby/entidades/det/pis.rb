@@ -1,4 +1,4 @@
-require '../entidade_nfe'
+require 'nfe-ruby/entidades/entidade_nfe'
 
 #elemento PIS do elemento imposto do elemento det da NFe
 #Dados do PIS

@@ -1,4 +1,4 @@
-require '../entidade_nfe'
+require 'nfe-ruby/entidades/entidade_nfe'
 
 #refECF do ide da TNFe
 #Grupo do cupom fiscal da nfe

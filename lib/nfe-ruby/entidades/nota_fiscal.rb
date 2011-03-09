@@ -1,9 +1,26 @@
 #coding: utf-8
-require 'entidade_nfe'
+
+require 'nfe-ruby/entidades/entidade_nfe'
+require 'nfe-ruby/entidades/ide/identificacao_nfe'
+require 'nfe-ruby/entidades/emit/emitente'
+require 'nfe-ruby/entidades/avulsa/avulsa'
+require 'nfe-ruby/entidades/dest/destinatario'
+require 'nfe-ruby/entidades/retirada/local_retirada'
+require 'nfe-ruby/entidades/entrega/local_entrega'
+require 'nfe-ruby/entidades/det/detalhes_nfe'
+require 'nfe-ruby/entidades/total/total'
+require 'nfe-ruby/entidades/transp/transporte'
+require 'nfe-ruby/entidades/cobr/cobranca'
+require 'nfe-ruby/entidades/infAdic/informacao_adicional_nfe'
+require 'nfe-ruby/entidades/exporta/exportacao'
+require 'nfe-ruby/entidades/compra/compra'
+require 'nfe-ruby/entidades/cana/cana'
+
+
 
 class NotaFiscal < EntidadeNFe
 
-  nfe_attr :ide #ide
+  nfe_attr :ide #ok
   nfe_attr :emit #ok
   nfe_attr :avulsa #ok
   nfe_attr :dest #ok
@@ -20,6 +37,8 @@ class NotaFiscal < EntidadeNFe
 
   nfe_attr :versao
   nfe_attr :Id
+
+
 
   #ds:signature ???
 

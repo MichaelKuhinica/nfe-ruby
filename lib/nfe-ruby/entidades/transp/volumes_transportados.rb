@@ -1,4 +1,4 @@
-require 'entidade_nfe'
+require 'nfe-ruby/entidades/entidade_nfe'
 
 #Dados dos volumes, representa o elemento vol do elemento transp da nfe
 class VolumesTransportados < EntidadeNFe

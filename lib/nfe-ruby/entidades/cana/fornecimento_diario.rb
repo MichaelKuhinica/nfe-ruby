@@ -1,4 +1,4 @@
-require '../entidade_nfe'
+require 'nfe-ruby/entidades/entidade_nfe'
 
 #Fornecimentos diários // v2.0
 #elemento forDia do elemento cana da NFe

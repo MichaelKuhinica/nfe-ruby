@@ -1,4 +1,4 @@
-require 'entidade_nfe'
+require 'nfe-ruby/entidades/entidade_nfe'
 
 #Representa o elemento cobr da nota fiscal
 class Cobranca < EntidadeNFe

@@ -17,8 +17,5 @@ require 'nfe-ruby/entidades/transportadora'
 =end
 
 require 'nfe-ruby/config/params'
-require 'nfe-ruby/entidades/entidade_nfe'
-require 'nfe-ruby/entidades/endereco_emitente'
+require 'nfe-ruby/entidades/nota_fiscal'
 
-x = EnderecoEmitente.new
-puts x.to_nfe_format
