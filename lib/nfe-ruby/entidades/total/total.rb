@@ -1,4 +1,4 @@
-require '../entidade_nfe'
+require 'nfe-ruby/entidades/entidade_nfe'
 
 #Dados dos totais da NF-e, elemento total da NFe
 class Total < EntidadeNFe

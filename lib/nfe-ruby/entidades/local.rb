@@ -1,9 +1,8 @@
-require 'entidade_nfe'
+require 'nfe-ruby/entidades/entidade_nfe'
 
 #Representa o tipo TLocal
 #Tipo Dados do Local de Retirada ou Entrega // 24/10/08 - tamanho mínimo // v2.0
-class Local
-  include EntidadeNFe
+class Local < EntidadeNFe
 
   #cnpj ou cpf
   nfe_attr :cnpj

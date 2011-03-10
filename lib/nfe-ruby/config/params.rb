@@ -1,7 +1,6 @@
 #coding: utf-8
 module NFe
 
-
   NAMESPACE_NFE = 'http://www.portalfiscal.inf.br/nfe'
   NAMESPACE_SIG = 'http://www.w3.org/2000/09/xmldsig#'
   NAMESPACE_SOAP = 'http://www.w3.org/2003/05/soap-envelope'
@@ -131,8 +130,8 @@ module NFe
 
   module Impostos
 
-
     module PIS
+
       CST_ALIQ = {
           '01' => 'Operação Tributável - Base de Cálculo = Valor da Operação Alíquota Normal (Cumulativo/Não Cumulativo)',
           '02' => 'Operação Tributável - Base de Calculo = Valor da Operação (Alíquota Diferenciada)'
@@ -176,6 +175,7 @@ module NFe
       CST_QTDE = {
           '03' => 'Operação Tributável - Base de Calculo = Quantidade Vendida x Alíquota por Unidade de Produto'
       }
+
     end
 
     module COFINS
@@ -187,7 +187,7 @@ module NFe
       CST_OUTROS = Impostos::PIS::CST_OUTROS
 
       CST_QTDE = Impostos::PIS::CST_QTDE
-      
+
     end
 
     module ICMS

@@ -7,7 +7,7 @@ class Imposto < EntidadeNFe
 #  sequence
 
   #  Dados do ICMS normal e ST
-  nfe_attr :ICMS #TODO ICMS :(
+  nfe_attr :ICMS
 
   #  Dados do IPI
   #nao obrigatorio
@@ -18,7 +18,6 @@ class Imposto < EntidadeNFe
   nfe_attr :II
 
 #  end_sequence
-
   nfe_attr :ISSQN
 #end_choice
 

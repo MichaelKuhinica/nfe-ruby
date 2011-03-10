@@ -1,4 +1,4 @@
-require 'entidade_nfe'
+require 'nfe-ruby/entidades/entidade_nfe'
 
 #Tipo da NF-e processada
 #TNfeProc declarado no layout_nfe 2.0

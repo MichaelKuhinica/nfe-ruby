@@ -1,4 +1,4 @@
-require '../entidade_nfe'
+require 'nfe-ruby/entidades/entidade_nfe'
 #Dados dos produtos e serviços da NF-e
 #elemento prod do elemento det da NFe
 class DadosProdutosServicos < EntidadeNFe

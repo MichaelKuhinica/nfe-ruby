@@ -4,11 +4,10 @@ require 'time'
 require 'uri'
 
 module NFe
+  
   module Service
 
-
     class NFeClient
-
 
       def initializer payload, url
         @uri = URI.parse(url)        #url = "http://webservice.onixsat.com.br"
@@ -16,7 +15,6 @@ module NFe
         @data = '<?xml version="1.0" encoding="UTF-8"?>'
         @data << payload
       end
-
 
       def dispatch
         http = Net::HTTP.new(@uri.host, @uri.port)

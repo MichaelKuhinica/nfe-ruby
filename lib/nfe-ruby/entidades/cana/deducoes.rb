@@ -1,4 +1,4 @@
-require '../entidade_nfe'
+require 'nfe-ruby/entidades/entidade_nfe'
 
 #Deduções - Taxas e Contribuições // v2.0
 #elemento deduc do elemento cana da NFe

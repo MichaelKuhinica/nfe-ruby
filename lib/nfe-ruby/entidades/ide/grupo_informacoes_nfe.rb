@@ -1,4 +1,4 @@
-require '../entidade_nfe'
+require 'nfe-ruby/entidades/entidade_nfe'
 
 #Elemento NFref do elemento ide da NFe
 class GrupoInformacoesNFe < EntidadeNFe
