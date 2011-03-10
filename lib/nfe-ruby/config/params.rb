@@ -179,6 +179,7 @@ module NFe
     end
 
     module COFINS
+
       CST_ALIQ = NFe::Impostos::PIS::CST_ALIQ
 
       CST_NT = Impostos::PIS::CST_NT
@@ -186,6 +187,7 @@ module NFe
       CST_OUTROS = Impostos::PIS::CST_OUTROS
 
       CST_QTDE = Impostos::PIS::CST_QTDE
+      
     end
 
     module ICMS
@@ -217,7 +219,7 @@ module NFe
           '90' => 'ICMS 90 - Outras'
       }
 
-      ICMS_MODALIDADES = {
+      MODALIDADES = {
           0 => 'Margem Valor Agregado',
           1 => 'Pauta [valor]',
           2 => 'Preco Tabelado Max. [valor]',
@@ -227,6 +229,5 @@ module NFe
     end
 
   end
-
 
 end
