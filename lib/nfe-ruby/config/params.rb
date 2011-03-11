@@ -13,9 +13,9 @@ module NFe
       1 => 'Simples Nacional',
       2 => 'Simples Nacional - excesso de sublimite de receita bruta',
       3 => 'Regime Normal'
-  }
+  }.freeze
 
-  TIPOS_DOCUMENTO = ['CNPJ', 'CPF']
+  TIPOS_DOCUMENTO = ['CNPJ', 'CPF'].freeze
 
   CODIGO_BRASIL = '1058'
 
@@ -25,7 +25,7 @@ module NFe
       'R' => 'RETIDA',
       'S' => 'SUBSTITUTA',
       'I' => 'ISENTA. (v.2.0)'
-  }
+  }.freeze
 
 
   IPI_TIPOS_TRIBUTACAO = {
@@ -43,12 +43,12 @@ module NFe
       '54' => 'IPI 54 - Saida imune',
       '55' => 'IPI 55 - Saida com suspensao',
       '99' => 'IPI 99 - Outas saidas'
-  }
+  }.freeze
 
   IPI_TIPOS_CALCULO = [
       'Percentual',
       'Em Valor'
-  ]
+  ].freeze
 
   PIS_TIPOS_TRIBUTACAO = [
       '01' => 'PIS 01 - Operacao Tributavel - Base de Calculo = Valor da Operacao Aliquota...', # FIXME
@@ -60,7 +60,7 @@ module NFe
       '08' => 'PIS 08 - Operacao sem Indidencia da Contribuicao',
       '09' => 'PIS 09 - Operacao com Suspensao da Contribuicao',
       '99' => 'PIS 99 - Outras operacoes'
-  ]
+  ].freeze
 
   PIS_TIPOS_CALCULO = IPI_TIPOS_CALCULO
 
@@ -74,7 +74,7 @@ module NFe
       '08' => 'COFINS 08 - Operacao sem Indidencia da Contribuicao',
       '09' => 'COFINS 09 - Operacao com Suspensao da Contribuicao',
       '99' => 'COFINS 99 - Outras operacoes'
-  ]
+  ].freeze
 
   COFINS_TIPOS_CALCULO = IPI_TIPOS_CALCULO
 
@@ -83,7 +83,7 @@ module NFe
       1 => 'Por conta do destinatario',
       2 => 'Por conta de terceiros',
       9 => 'Sem frete'
-  }
+  }.freeze
 
   CODIGOS_ESTADOS = {
       :RO => '11',
@@ -113,7 +113,7 @@ module NFe
       :MT => '51',
       :GO => '52',
       :DF => '53',
-  }
+  }.freeze
 
   TIPOS_AMBIENTE = {
       1 => 'Producao',
@@ -126,16 +126,25 @@ module NFe
       3 => 'Justiça Estadual',
       4 => 'Secex/RFB',
       9 => 'Outros'
-  }
+  }.freeze
 
   module Impostos
+
+    MOD_BC_ST = {
+        0 => 'Preço tabelado ou máximo sugerido',
+        1 => 'Lista Negativa (valor)',
+        2 => 'Lista Positiva (valor)',
+        3 => 'Lista Neutra (valor)',
+        4 => 'Margem Valor Agregado (%)',
+        5 => 'Pauta (valor)'
+    }.freeze
 
     module PIS
 
       CST_ALIQ = {
           '01' => 'Operação Tributável - Base de Cálculo = Valor da Operação Alíquota Normal (Cumulativo/Não Cumulativo)',
           '02' => 'Operação Tributável - Base de Calculo = Valor da Operação (Alíquota Diferenciada)'
-      }
+      }.freeze
 
       CST_NT = {
           '04' => 'Operação Tributável - Tributação Monofásica - (Alíquota Zero)',
@@ -143,7 +152,7 @@ module NFe
           '07' => 'Operação Isenta da contribuição',
           '08' => 'Operação Sem Incidência da contribuição',
           '09' => 'Operação com suspensão da contribuição'
-      }
+      }.freeze
 
       CST_OUTROS = {
           49 => 'Outras Operações de Saída',
@@ -170,11 +179,11 @@ module NFe
           75 => 'Operação de Aquisição por Substituição Tributária',
           98 => 'Outras Operações de Entrada',
           99 => 'Outras Operações.'
-      }
+      }.freeze
 
       CST_QTDE = {
           '03' => 'Operação Tributável - Base de Calculo = Quantidade Vendida x Alíquota por Unidade de Produto'
-      }
+      }.freeze
 
     end
 
@@ -191,19 +200,12 @@ module NFe
     end
 
     module ICMS
-#      Modalidade de determinação da BC do ICMS:
-#      0 - Margem Valor Agregado (%);
-#      1 - Pauta (valor);
-#      2 - Preço Tabelado Máximo (valor);
-#      3 - Valor da Operação.
-#
-#
-#
+
       ORIGENS = {
           0 => 'Nacional',
           1 => 'Estrangeira - Importacao Direta',
           2 => 'Estrangeira - Adquirida no Mercado Interno'
-      }
+      }.freeze
 
       CST = {
           '00' => 'ICMS 00 - Tributada integralmente',
@@ -217,14 +219,14 @@ module NFe
           '60' => 'ICMS 60 - Cobrado anteriormente por substituicao tributaria',
           '70' => 'ICMS 70 - Com reducao da base de calculo e cobranca do ICMS por substituicao tributaria',
           '90' => 'ICMS 90 - Outras'
-      }
+      }.freeze
 
       MODALIDADES = {
           0 => 'Margem Valor Agregado',
           1 => 'Pauta [valor]',
           2 => 'Preco Tabelado Max. [valor]',
           3 => 'Valor da Operacao'
-      }
+      }.freeze
 
     end
 

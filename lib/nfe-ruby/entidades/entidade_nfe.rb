@@ -1,8 +1,10 @@
 #coding: utf-8
+require 'nfe-ruby/util/validation_entity'
 
-class EntidadeNFe
+class EntidadeNFe < ValidationEntity
 
   @@xml_params = []
+  @@validations = []
 
   def self.nfe_attr *names
     names.each do |name|
@@ -52,7 +54,6 @@ class EntidadeNFe
     end
     xml
   end
-
 
   def validate
     true
