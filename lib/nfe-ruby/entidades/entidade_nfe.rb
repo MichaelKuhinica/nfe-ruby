@@ -7,6 +7,8 @@ class EntidadeNFe < ValidationEntity
   @@validations = []
 
   def self.nfe_attr *names
+    validates_required names
+
     names.each do |name|
       attr_accessor name
       @@xml_params << name.to_s
@@ -28,6 +30,8 @@ class EntidadeNFe < ValidationEntity
         xml += convert_to_xml(key, value)
       end
       xml
+    else
+      puts errors_messages
     end
   end
 
@@ -53,10 +57,6 @@ class EntidadeNFe < ValidationEntity
       xml += convert_to_xml(key, value)
     end
     xml
-  end
-
-  def validate
-    true
   end
 
 end

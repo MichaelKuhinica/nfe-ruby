@@ -118,7 +118,7 @@ class NotaFiscal < EntidadeNFe
     @processo_emissao                         = 0
     @local_retirada_diferente_emitente        = false
     @localocal_entrega_diferente_destinatario = false
-    @versao_processo_emissao                  = Nfe::VERSAO_PADRAO
-    @status                                   = Nfe::status_inicial
+    @versao_processo_emissao                  = NFe::VERSAO_PADRAO
+    @status                                   = NFe::status_inicial
   end
 end

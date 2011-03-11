@@ -5,7 +5,7 @@ class ValidationEntity
   @@attrs_to_valide = []
   @@errors = {}
 
-  def validates_length(*attrs)
+  def self.validates_length(*attrs)
     atributes = []
 
     attrs.each do |t|
@@ -15,7 +15,7 @@ class ValidationEntity
     @@attrs_to_valide << [:length, attrs[:range], atributes]
   end
 
-  def validates_required(*attrs)
+  def self.validates_required(*attrs)
     atributes = []
 
     attrs.each do |t|
@@ -25,7 +25,7 @@ class ValidationEntity
     @@attrs_to_valide << [:required, atributes]
   end
 
-  def validates_format(*attrs)
+  def self.validates_format(*attrs)
     atributes = []
 
     attrs.each do |t|
@@ -35,7 +35,7 @@ class ValidationEntity
     @@attrs_to_valide << [:format, attrs[:regex], atributes]
   end
 
-  def validates_type(*attrs)
+  def self.validates_type(*attrs)
     atributes = []
 
     attrs.each do |t|
@@ -112,6 +112,7 @@ class ValidationEntity
   end
 
   def add_error(attr, type)
+
     case type
       when :length then
         @@errors.merge({attr => 'tamanho inválido'})
@@ -122,6 +123,11 @@ class ValidationEntity
       when :type then
         @@errors.merge({attr => 'tipo inválido'})
     end
+
+  end
+
+  def error_messages
+    @@errors
   end
 
 end

@@ -19,3 +19,8 @@ require 'nfe-ruby/entidades/transportadora'
 require 'nfe-ruby/config/params'
 require 'nfe-ruby/entidades/nota_fiscal'
 
+nf = NotaFiscal.new
+
+nf.to_nfe_format
+
+
