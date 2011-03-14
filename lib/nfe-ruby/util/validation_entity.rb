@@ -12,7 +12,7 @@ class ValidationEntity
       atributes << t
     end
 
-    @@attrs_to_valide << [:length, attrs[:range], atributes]
+    @@attrs_to_valide << [self.class.to_s, :length, attrs[:range], atributes]
   end
 
   def self.validates_required(*attrs)
@@ -22,7 +22,7 @@ class ValidationEntity
       atributes << t
     end
 
-    @@attrs_to_valide << [:required, atributes]
+    @@attrs_to_valide << [self.class.to_s, :required, atributes]
   end
 
   def self.validates_format(*attrs)
@@ -32,7 +32,7 @@ class ValidationEntity
       atributes << t
     end
 
-    @@attrs_to_valide << [:format, attrs[:regex], atributes]
+    @@attrs_to_valide << [self.class.to_s, :format, attrs[:regex], atributes]
   end
 
   def self.validates_type(*attrs)
@@ -42,7 +42,7 @@ class ValidationEntity
       atributes << t
     end
 
-    @@attrs_to_valide << [:type, attrs[:type], atributes]
+    @@attrs_to_valide << [self.class.to_s, :type, attrs[:type], atributes]
   end
 
   private
@@ -62,7 +62,9 @@ class ValidationEntity
   end
 
   def validate
-    @@attrs_to_valide.each do |rule|
+    attrs = @@attrs_to_valide.select { |r| r[0] == self.class.to_s }
+
+    attrs.each do |rule|
       validate_rule(rule) #rule contem um array de atributos e um parametro dependendo do tipo de validacao
     end
 
@@ -71,42 +73,42 @@ class ValidationEntity
 
   def validate_rule(rule)
 
-    case rule[0]
+    case rule[1]
       when :length then
-        validate_length(rule[2], rule[1])
+        validate_length(rule[3], rule[2])
       when :required then
         validate_required(rule[2])
       when :format then
-        validate_format(rule[2], rule[1])
+        validate_format(rule[3], rule[2])
       when :type then
-        validate_type(rule[2], rule[1])
+        validate_type(rule[3], rule[2])
     end
 
   end
 
   def validate_length(attrs, range)
     attrs.each do |attr|
-      add_error(attr, :length) unless in_length(self.send(attr.to_s), range)
+      add_error(attr, :length) unless in_length(get_attribute_value(attr), range)
     end
     true
   end
 
   def validate_required(attrs)
     attrs.each do |attr|
-      add_error(attr, :required) unless not_null? self.send(attr.to_s)
+      add_error(attr, :required) unless not_null? get_attribute_value(attr)
     end
   end
 
   def validate_format(attrs, regex)
     attrs.each do |attr|
-      add_error(attr, :format) unless in_format(self.send(attr.to_s), regex)
+      add_error(attr, :format) unless in_format(get_attribute_value(attr), regex)
     end
     true
   end
 
   def validate_type(attrs, klass)
     attrs.each do |attr|
-      add_error(attr, :type) unless self.send(attr.to_s).is_a? klass
+      add_error(attr, :type) unless get_attribute_value(attr).is_a? klass
     end
     true
   end
@@ -122,6 +124,16 @@ class ValidationEntity
         @@errors.merge({attr => 'formato inválido'})
       when :type then
         @@errors.merge({attr => 'tipo inválido'})
+    end
+
+  end
+
+  def get_attribute_value value
+
+    begin
+      self.send(value.to_s)
+    rescue
+      throw "Atributo #{value.to_s} não existe na classe #{self.to_s}"
     end
 
   end

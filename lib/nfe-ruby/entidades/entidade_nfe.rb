@@ -3,23 +3,35 @@ require 'nfe-ruby/util/validation_entity'
 
 class EntidadeNFe < ValidationEntity
 
-  @@xml_params = []
+  @@xml_params = {}
   @@validations = []
 
   def self.nfe_attr *names
-    validates_required names
-
     names.each do |name|
       attr_accessor name
-      @@xml_params << name.to_s
+      update_xml_params(self.to_s, name)
+      puts @@xml_params
     end
+  end
+
+  def self.update_xml_params(entity, attr)
+
+    @@xml_params = @@xml_params.merge({entity => {}}) unless @@xml_params.include? entity
+
+    @@xml_params[entity] = @@xml_params[entity].merge({:attributes => []}) if @@xml_params[entity].empty?
+
+    @@xml_params[entity][:attributes] << attr
+
   end
 
   def attributes
     hash = {}
-    @@xml_params.each do |attr|
+    class_attributes = @@xml_params.select { |entity| entity.to_s == self.class.to_s }
+
+    class_attributes[self.class.to_s][:attributes].each do |attr|
       hash = hash.merge(attr => send(attr))
     end
+
     hash
   end
 
@@ -35,18 +47,26 @@ class EntidadeNFe < ValidationEntity
     end
   end
 
+  def to_s
+    return self.to_nfe_format if self.respond_to? :to_nfe_format
+    super
+  end
+
   private
   def convert_to_xml(key, value)
-    if value.nil?
-      return ""
+    return "" if value.nil?
+
+    if value.respond_to? :to_nfe_format
+      return "#{value}" unless value.to_s.empty?
     end
+
     unless value.is_a? Hash
-      "<#{key}>#{value}<#{key}/>\n" unless value.to_s.empty?
+      "<#{key}>#{value}</#{key}>\n" unless value.to_s.empty?
     else
       <<-XML
-      <#{key}>
-        #{hash_converter(value)}
-      </#{key}>
+          <#{key}>
+            #{hash_converter(value)}
+          </#{key}>
       XML
     end
   end
