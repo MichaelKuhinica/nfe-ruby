@@ -10,7 +10,6 @@ class EntidadeNFe < ValidationEntity
     names.each do |name|
       attr_accessor name
       update_xml_params(self.to_s, name)
-      puts @@xml_params
     end
   end
 

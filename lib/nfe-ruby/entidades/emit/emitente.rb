@@ -52,7 +52,7 @@ class Emitente < EntidadeNFe
   end
 
   def initialize
-    @endereco_pais = Parametros::CODIGO_BRASIL
+    @endereco_pais = NFe::CODIGO_BRASIL
   end
 
   def to_s

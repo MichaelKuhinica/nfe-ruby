@@ -111,11 +111,22 @@ class NotaFiscal < EntidadeNFe
   end
 
   def initialize
-    @processo_emissao = 0
-    @local_retirada_diferente_emitente = false
-    @localocal_entrega_diferente_destinatario = false
     @versao_processo_emissao = NFe::VERSAO_PADRAO
+    @ide = IdentificacaoNFe.new
+    @emit = Emitente.new
     @avulsa = Avulsa.new
+    @dest = Destinatario.new
+    @retirada = LocalRetirada.new
+    @entrega = LocalEntrega.new
+    @det = DetalhesNFe.new
+    @total = Total.new
+    @transp = Transporte.new
+    @cobr = Cobranca.new
+    @infAdic = InformacaoAdicionalNFe.new
+    @exporta = Exportacao.new
+    @compra = Compra.new
     @cana = Cana.new
+    @versao = '2.0'
+    #TODO: Gerar id unico para nota
   end
 end
