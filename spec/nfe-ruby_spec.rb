@@ -1,8 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 require 'nokogiri'
-require 'nfe-ruby/entidades/entidade_nfe'
+require 'nfe/entidades/entidade_nfe'
 
-describe 'nfe-ruby' do
+describe 'nfe' do
 
 
   it 'should generate a valid xml' do

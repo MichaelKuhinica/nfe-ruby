@@ -12,8 +12,8 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "nfe-ruby"
-  gem.homepage = "http://github.com/viniciusgati/nfe-ruby"
+  gem.name = "nfe"
+  gem.homepage = "http://github.com/viniciusgati/nfe"
   gem.license = "MIT"
   gem.summary = %Q{NF-e Brasil}
   gem.description = %Q{NF-e Brasil gem}
@@ -44,7 +44,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "nfe-ruby #{version}"
+  rdoc.title = "nfe #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
