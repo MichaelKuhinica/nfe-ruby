@@ -1,13 +1,16 @@
-require 'rubygems'
-
 $LOAD_PATH.unshift(File.dirname(__FILE__))
+
+require 'nfe-ruby/config/params'
+require 'nfe-ruby/nfe'
+
+
+
+if __FILE__==$0
 
 puts 'Rodando nfe-ruby'
 
 #puts $LOAD_PATH
 
-require 'nfe-ruby/config/params'
-require 'nfe-ruby/entidades/nota_fiscal'
 
 nf = NotaFiscal.new
 
@@ -29,3 +32,5 @@ nf.retirada = 'xxxxx'
 nf.total = 'xxxxx'
 nf.transp = 'xxxxx'
 puts nf.to_nfe_format
+
+end

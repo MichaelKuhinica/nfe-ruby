@@ -1,9 +1,13 @@
 source "http://rubygems.org"
 # Required
-gem "em-http-request"
 gem "nokogiri"
-gem "redis"
-gem "resque"
+gem "roxml"
+
+group :evented do
+  gem "em-http-request"
+  gem "redis" 
+  gem "resque"
+end
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
