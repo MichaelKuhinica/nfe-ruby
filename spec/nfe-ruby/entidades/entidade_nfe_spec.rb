@@ -5,7 +5,7 @@ describe 'EntidadeNFe' do
   describe "Class Methods" do
 
     it 'should have nfe_attr as a method' do
-      EntidadeNFe::methods.include?(:nfe_attr).should be_true
+      NFe::EntidadeNFe::methods.include?(:nfe_attrs).should be_true
     end
 
   end
@@ -14,7 +14,7 @@ describe 'EntidadeNFe' do
 
     before(:all) do
 
-      class Teste < EntidadeNFe
+      class Teste < NFe::EntidadeNFe
         nfe_attr :teste_attr
       end
 
@@ -26,7 +26,7 @@ describe 'EntidadeNFe' do
     end
 
     it 'should not share attrbutes with simblings' do
-      class Teste2 < EntidadeNFe
+      class Teste2 < NFe::EntidadeNFe
         nfe_attr :teste_attr2
       end
 

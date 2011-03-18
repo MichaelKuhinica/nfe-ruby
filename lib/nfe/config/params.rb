@@ -191,13 +191,13 @@ module NFe
 
       module COFINS
 
-        CST_ALIQ = NFe::Impostos::PIS::CST_ALIQ
+        CST_ALIQ = NFe::Params::Impostos::PIS::CST_ALIQ
 
-        CST_NT = Impostos::PIS::CST_NT
+        CST_NT = NFe::Params::Impostos::PIS::CST_NT
 
-        CST_OUTROS = Impostos::PIS::CST_OUTROS
+        CST_OUTROS = NFe::Params::Impostos::PIS::CST_OUTROS
 
-        CST_QTDE = Impostos::PIS::CST_QTDE
+        CST_QTDE = NFe::Params::Impostos::PIS::CST_QTDE
 
       end
 
