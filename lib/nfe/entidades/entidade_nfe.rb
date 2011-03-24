@@ -1,10 +1,10 @@
 #coding: utf-8
-require 'nfe/util/validation_entity'
+require 'nfe/util/validation_control'
 require 'roxml'
 
 module NFe
 
-  class EntidadeNFe < ValidationEntity
+  class EntidadeNFe
     
     include ROXML
 
