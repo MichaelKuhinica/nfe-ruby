@@ -50,7 +50,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.0.0)
+  bundler
   em-http-request
   jeweler (~> 1.5.2)
   nokogiri
