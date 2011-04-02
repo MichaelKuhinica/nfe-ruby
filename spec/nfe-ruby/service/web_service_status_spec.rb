@@ -1,11 +1,9 @@
-require "rspec"
-require 'nfe/service/web_service_status'
+require File.expand_path(File.dirname(__FILE__) + '../../../spec_helper')
 
-
-describe "WebServiceStatus" do
+describe "WebService" do
 
   it "should get the status from the webservice" do
-    test = WebServiceStatus.new
+    test = NFe::Service::WebService.new
   end
-  
+
 end
