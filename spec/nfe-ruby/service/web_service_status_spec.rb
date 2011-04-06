@@ -4,7 +4,7 @@ certificate_dir = File.expand_path(File.dirname(__FILE__) + '../../../../lib/nfe
 describe "WebService" do
 
   it "should get the status from the webservice" do
-    test = NFe::Service::WebService.new('WGATI', "wgf39400", certificate_dir,'sp')
+    test = NFe::Service::WebService.new('', "", certificate_dir,'sp')
     p test.status_servico
   end
 
