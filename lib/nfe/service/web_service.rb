@@ -9,22 +9,32 @@ module NFe
 
       attr_accessor :soap_params, :client
 
-      def initialize(user, pass, certificate, state='sp')
-        raise 'parametro de inicializacao de webservice invalido' unless state.respond_to? :to_sym
-        @certificate = certificate
+      def initialize(user, pass, certificate_path, state='sp')
+        raise 'estado em formato inválido' unless state.respond_to? :to_sym
+        @soap_params = NFe::Config::Params::URLS::SOAP_URLS[state.to_sym]
+
+        @url = "#{@soap_params[:base_url]}#{:status_servico}"
+        @certificate_path = certificate_path
         @user = user
         @pass = pass
-        self.soap_params = NFe::Config::Params::URLS::SOAP_URLS[state.to_sym]
       end
 
       def status_servico
-        client = Savon::Client.new do |wsdl, http, wsse|
-          wsse.credentials @user, @pass, @certificate
-          wsdl.document = "#{soap_params[:base_url]}#{soap_params[:status_servico]}?wsdl"
-          http.auth.ssl.cert_file = @certificate
-        end
+        uri = URI.parse(@url)
+        pem = File.read(@certificate_path)
 
-        p client.wsdl.soap_actions
+        http = Net::HTTP.new(uri.host, uri.port)
+
+        http.use_ssl = true
+        http.cert = OpenSSL::X509::Certificate.new(pem)
+
+        http.key = OpenSSL::PKey::RSA.new(pem)
+
+        http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+
+        request = Net::HTTP::Get.new(uri.request_uri)
+
+        p request.body
       end
 
     end
