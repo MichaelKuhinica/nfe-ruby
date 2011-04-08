@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## MAC OS
 .DS_Store
 
@@ -25,4 +26,35 @@ pkg
 
 ## PROJECT::SPECIFIC
 *.pfx
+=======
+## MAC OS
+.DS_Store
+
+## TEXTMATE
+*.tmproj
+tmtags
+
+## EMACS
+*~
+\#*
+.\#*
+*_flymake\.*
+
+## VIM
+*.swp
+
+## PROJECT::GENERAL
+coverage
+rdoc
+pkg
+
+## IDEA IDE
+\.idea
+.idea
+
+## PROJECT::SPECIFIC
+
+
+*.pfx
+>>>>>>> 42a75d4e5c14338cc523ea07da15052165da4d54
 *.pem
