@@ -5,8 +5,5 @@ require 'nfe/nfe'
 require 'nfe/util/validation_control'
 
 if __FILE__==$0
-
-puts 'Rodando nfe'
-
-
+  puts 'Rodando nfe'
 end

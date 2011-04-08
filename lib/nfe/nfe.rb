@@ -1,4 +1,5 @@
 module NFe
+  
   class NotaFiscal
 
     def initialize(*items)
@@ -11,8 +12,8 @@ module NFe
         doc << item.nfe_attrs
       end
       doc.serialize
-
     end
 
   end
+
 end
