@@ -2,7 +2,7 @@ require "../entidade_nfe"
 
 
 #Dados do COFINS
-class Cofins < EntidadeNFe
+class Cofins < NFe::EntidadeNFe
 
   nfe_attr :COFINSAliq
 

@@ -4,7 +4,7 @@ module NFe
 
 #Retenção de Tributos Federais
 #elemento retTrib do elemento total da NFe
-  class RetencaoTributosFederais < EntidadeNFe
+  class RetencaoTributosFederais < NFe::EntidadeNFe
 
     nfe_attr :vRetPIS
     nfe_attr :vRetCOFINS

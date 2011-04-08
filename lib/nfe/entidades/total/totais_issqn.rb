@@ -4,7 +4,7 @@ module NFe
 
 #Totais referentes ao ISSQN
 #elemento ISSQNtot do elemento total da NFe
-  class TotaisIssqn < EntidadeNFe
+  class TotaisIssqn < NFe::EntidadeNFe
 
     #Valor Total dos Serviços sob não-incidência ou não tributados pelo ICMS
     nfe_attr :vServ

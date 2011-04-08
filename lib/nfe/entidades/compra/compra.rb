@@ -3,7 +3,7 @@ require 'nfe/entidades/entidade_nfe'
 module NFe
 
 #Informações de compras (Nota de Empenho, Pedido e Contrato)
-  class Compra < EntidadeNFe
+  class Compra < NFe::EntidadeNFe
 
     #Informacoes de compras(Nota de empenho, pedido, contrato)
     nfe_attr :xNEmp

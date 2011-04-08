@@ -3,7 +3,7 @@ require 'nfe/entidades/entidade_nfe'
 module NFe
 #Representa o tipo TLocal
 #Tipo Dados do Local de Retirada ou Entrega // 24/10/08 - tamanho mínimo // v2.0
-  class Local < EntidadeNFe
+  class Local < NFe::EntidadeNFe
 
     #cnpj ou cpf
     nfe_attr :cnpj

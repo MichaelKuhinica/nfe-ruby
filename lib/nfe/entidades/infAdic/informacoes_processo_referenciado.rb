@@ -4,7 +4,7 @@ require 'config/params'
 module NFe
 
 #Grupo de informações do processo referenciado
-  class InformacoesProcessoReferenciado < EntidadeNFe
+  class InformacoesProcessoReferenciado < NFe::EntidadeNFe
     #Indentificador do processo ou ato concessório
     nfe_attr :nProc
 

@@ -3,7 +3,7 @@ require 'nfe/entidades/entidade_nfe'
 module NFe
 
 #Representa o elemento cobr da nota fiscal
-  class Cobranca < EntidadeNFe
+  class Cobranca < NFe::EntidadeNFe
 
     nfe_attr :fatura #objeto Fatura
 

@@ -2,7 +2,7 @@ require 'nfe/entidades/entidade_nfe'
 
 module NFe
 
-  class LocalEntrega < EntidadeNFe
+  class LocalEntrega < NFe::EntidadeNFe
 
     nfe_attr :local
 

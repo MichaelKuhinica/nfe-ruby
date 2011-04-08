@@ -3,7 +3,7 @@ require 'nfe/entidades/entidade_nfe'
 module NFe
 
 #elemento ide da NFe
-  class IdentificacaoNFe < EntidadeNFe
+  class IdentificacaoNFe < NFe::EntidadeNFe
 
     #TCodIBGE
     nfe_attr :cUF

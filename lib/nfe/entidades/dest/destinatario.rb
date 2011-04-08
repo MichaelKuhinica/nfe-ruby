@@ -2,7 +2,7 @@ require 'nfe/entidades/entidade_nfe'
 
 module NFe
 
-  class Destinatario < EntidadeNFe
+  class Destinatario < NFe::EntidadeNFe
 
     #Cnj ou cpf
     nfe_attr :cnpj

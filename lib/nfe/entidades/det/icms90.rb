@@ -2,7 +2,7 @@ require "../entidade_nfe"
 
 module NFe
 
-  class ICMS90 < EntidadeNFe
+  class ICMS90 < NFe::EntidadeNFe
 
     nfe_attr :orig
 

@@ -4,7 +4,7 @@ require 'nfe_ruby/config/params'
 module NFe
 
 #elemento infProt dentro do tipo TProtNFe
-  class ProtocoloStatus < EntidadeNFe
+  class ProtocoloStatus < NFe::EntidadeNFe
 
     #Identificação do ambiente : 1-Producao 2-Homologação
     nfe_attr :tpAmb

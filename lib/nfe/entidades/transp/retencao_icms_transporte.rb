@@ -3,7 +3,7 @@ require 'nfe/entidades/entidade_nfe'
 module NFe
 
 #elemento <retTransp> do elemento <transp> da nfe
-  class RetencaoIcmsTransporte < EntidadeNFe
+  class RetencaoIcmsTransporte < NFe::EntidadeNFe
 
     #valor do Serviço
     nfe_attr :vServ

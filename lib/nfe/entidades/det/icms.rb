@@ -1,7 +1,7 @@
 require "../entidade_nfe"
 
 #Dados do ICMS Normal e ST
-class ICMS < EntidadeNFe
+class ICMS < NFe::EntidadeNFe
 
 
 

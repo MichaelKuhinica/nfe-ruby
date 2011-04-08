@@ -4,7 +4,7 @@ module NFe
 
 #elemento fatura do elemento cobr da nfe
 #Contém dados da fatura
-  class Fatura < EntidadeNFe
+  class Fatura < NFe::EntidadeNFe
 
     #Número da fatura (1 a 60 caracteres)
     nfe_attr :nFat

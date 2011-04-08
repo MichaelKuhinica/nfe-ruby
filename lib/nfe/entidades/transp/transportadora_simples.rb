@@ -3,7 +3,7 @@ import 'entidades/nfe_entity'
 module NFe
 
 #representa elemento <transporta> do elemento <transp> da nfe
-  class TransportadoraSimples < EntidadeNFe
+  class TransportadoraSimples < NFe::EntidadeNFe
 
     #ou cpf ou cnpj
     nfe_attr :cpf, :cnpj

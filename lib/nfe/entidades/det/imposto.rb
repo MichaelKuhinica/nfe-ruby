@@ -3,7 +3,7 @@ require "../entidade_nfe"
 module NFe
 
 #Tributos incidentes nos produtos e servicos da NFe
-  class Imposto < EntidadeNFe
+  class Imposto < NFe::EntidadeNFe
 
 #choice
 #  sequence

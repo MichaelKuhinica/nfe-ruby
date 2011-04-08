@@ -1,6 +1,6 @@
 require 'nfe/entidades/entidade_nfe'
 
-class ICMS20 < EntidadeNFe
+class ICMS20 < NFe::EntidadeNFe
 
   #Tributção pelo ICMS  20 - Com redução de base de cálculo
   nfe_attr :orig

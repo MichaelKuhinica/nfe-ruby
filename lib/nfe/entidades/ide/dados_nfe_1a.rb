@@ -2,7 +2,7 @@ require 'nfe/entidades/entidade_nfe'
 
 module NFe
 
-  class DadosNFe1A < EntidadeNFe
+  class DadosNFe1A < NFe::EntidadeNFe
 
     #TCodUfIBGE
     nfe_attr :cUF

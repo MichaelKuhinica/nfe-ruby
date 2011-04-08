@@ -1,7 +1,7 @@
 require 'nfe/entidades/entidade_nfe'
 #Dados dos produtos e serviços da NF-e
 #elemento prod do elemento det da NFe
-class DadosProdutosServicos < EntidadeNFe
+class DadosProdutosServicos < NFe::EntidadeNFe
 
 #Código do produto ou serviço. Preencher com CFOP caso se trate de itens
 #não relacionados com mercadorias/produto e que o contribuinte não possua codificação

@@ -3,7 +3,7 @@ require "../entidade_nfe"
 module NFe
 
 #totais referentes ao ICMS
-  class TotaisICMS < EntidadeNFe
+  class TotaisICMS < NFe::EntidadeNFe
 
     #BC do ICMS
     nfe_attr :vBC

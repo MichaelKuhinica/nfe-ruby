@@ -18,7 +18,7 @@ require 'nfe/entidades/cana/cana'
 
 module NFe
 
-  class NotaFiscal < EntidadeNFe
+  class NotaFiscal < NFe::EntidadeNFe
 
     nfe_attr :ide #ok
     nfe_attr :emit #ok

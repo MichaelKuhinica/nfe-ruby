@@ -4,7 +4,7 @@ module NFe
 
 #Fornecimentos diários // v2.0
 #elemento forDia do elemento cana da NFe
-  class FornecimentoDiario < EntidadeNFe
+  class FornecimentoDiario < NFe::EntidadeNFe
 
     #Quantidade em quilogramas - peso liquido // 2.0
     nfe_attr :qtde

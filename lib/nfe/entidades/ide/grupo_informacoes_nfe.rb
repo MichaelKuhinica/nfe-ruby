@@ -3,7 +3,7 @@ require 'nfe/entidades/entidade_nfe'
 module NFe
 
 #Elemento NFref do elemento ide da NFe
-  class GrupoInformacoesNFe < EntidadeNFe
+  class GrupoInformacoesNFe < NFe::EntidadeNFe
 
     #TChNFe
     #Chave de acesso das NF-e referenciadas.

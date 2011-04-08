@@ -1,6 +1,6 @@
 require "../entidade_nfe"
 
-class ICMS40 < EntidadeNFe
+class ICMS40 < NFe::EntidadeNFe
 
   nfe_attr :orig
 

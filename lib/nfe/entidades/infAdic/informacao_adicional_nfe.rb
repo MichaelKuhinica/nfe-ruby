@@ -3,7 +3,7 @@ require 'nfe/entidades/entidade_nfe'
 module NFe
 
 #elemento infAdic da nfe
-  class InformacaoAdicionalNFe < EntidadeNFe
+  class InformacaoAdicionalNFe < NFe::EntidadeNFe
 
     #Informações adicionais de interesse do Fisco (v2.0)
     nfe_attr :infAdFisco #ate 2000 caracteres

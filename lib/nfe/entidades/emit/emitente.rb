@@ -3,7 +3,7 @@ require 'nfe/entidades/entidade_nfe'
 
 module NFe
 
-  class Emitente < EntidadeNFe
+  class Emitente < NFe::EntidadeNFe
     # - Nome/Razao Social (obrigatório)
     nfe_attr :razao_social
 

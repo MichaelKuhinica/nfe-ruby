@@ -1,6 +1,10 @@
 #coding: utf-8
-require 'nfe/util/validation_control'
+
+require 'nokogiri'
 require 'roxml'
+
+#require 'nfe/util/validation_control'
+
 
 module NFe
 

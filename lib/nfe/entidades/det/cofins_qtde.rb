@@ -1,6 +1,6 @@
 require 'nfe/entidades/entidade_nfe'
 
-class COFINSQtde < EntidadeNFe
+class COFINSQtde < NFe::EntidadeNFe
 
 =begin
   Código de Situação Tributária do COFINS.

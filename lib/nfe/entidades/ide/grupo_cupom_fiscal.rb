@@ -4,7 +4,7 @@ module NFe
 
 #refECF do ide da TNFe
 #Grupo do cupom fiscal da nfe
-  class GrupoCupomFiscal < EntidadeNFe
+  class GrupoCupomFiscal < NFe::EntidadeNFe
 
     #Codigo modelo do documento fiscal
     #2B - Cupom fiscal emitido por maquina registradora (nao ECF)

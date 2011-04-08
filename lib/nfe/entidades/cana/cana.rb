@@ -3,7 +3,7 @@ require 'nfe/entidades/entidade_nfe'
 module NFe
 
 #Informações de registro aquisições de cana // v2.0
-  class Cana < EntidadeNFe
+  class Cana < NFe::EntidadeNFe
     #Identificacao da safra // v2.0 (minimo 4 max 9 caracteres)
     nfe_attr :safra
 

@@ -3,7 +3,7 @@ require 'nfe/entidades/entidade_nfe'
 module NFe
 
 #Dados dos totais da NF-e, elemento total da NFe
-  class Total < EntidadeNFe
+  class Total < NFe::EntidadeNFe
 
     nfe_attr :ICMSTot
     nfe_attr :ISSQNtot

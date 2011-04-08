@@ -1,6 +1,6 @@
 require 'nfe/entidades/entidade_nfe'
 
-class COFINSAliq < EntidadeNFe
+class COFINSAliq < NFe::EntidadeNFe
 
     nfe_attr :CST
 

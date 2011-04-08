@@ -2,7 +2,7 @@ require 'nfe/entidades/entidade_nfe'
 
 module NFe
 
-  class GrupoInformacoesNfProdutor < EntidadeNFe
+  class GrupoInformacoesNfProdutor < NFe::EntidadeNFe
 
     #TCodUfIBGE
     nfe_attr :cUF

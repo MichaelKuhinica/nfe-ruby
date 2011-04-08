@@ -3,7 +3,7 @@ require 'nfe/entidades/entidade_nfe'
 
 module NFe
 
-  class ProdutoICMS < EntidadeNFe
+  class ProdutoICMS < NFe::EntidadeNFe
 
     # - Tipo de Tributacao (seleciona de lista) - ICMS_TIPOS_TRIBUTACAO
     nfe_attr :tipo_tributacao

@@ -2,7 +2,7 @@ require 'nfe/entidades/entidade_nfe'
 
 module NFe
 
-  class PISQtde < EntidadeNFe
+  class PISQtde < NFe::EntidadeNFe
 
     nfe_attr :CST
 

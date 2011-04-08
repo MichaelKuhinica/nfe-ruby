@@ -1,8 +1,13 @@
 require File.expand_path(File.dirname(__FILE__) + '../../../spec_helper')
+require 'nfe/entidades/nota_fiscal'
 
 describe 'EntidadeNFe' do
 
   describe "Class Methods" do
+
+    it 'should be true' do
+      true.should be_true
+    end
 
     it 'should have nfe_attr as a method' do
       NFe::EntidadeNFe::methods.include?(:nfe_attrs).should be_true

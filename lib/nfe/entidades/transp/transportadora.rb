@@ -2,7 +2,7 @@ require 'nfe/entidades/entidade_nfe'
 
 module NFe
 
-  class Transportadora < EntidadeNFe
+  class Transportadora < NFe::EntidadeNFe
 
     # - Nome/Razão Social (obrigatorio)
     nfe_attr :razao_social

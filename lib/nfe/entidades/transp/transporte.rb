@@ -5,7 +5,7 @@ require 'nfe/entidades/entidade_nfe'
 module NFe
 
 #elemento transp da nfe
-  class Transporte < EntidadeNFe
+  class Transporte < NFe::EntidadeNFe
 
     nfe_attr :modFrete
 

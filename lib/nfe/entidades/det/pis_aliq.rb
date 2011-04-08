@@ -2,7 +2,7 @@ require 'nfe/entidades/entidade_nfe'
 
 module NFe
 
-  class PISAliq < EntidadeNFe
+  class PISAliq < NFe::EntidadeNFe
 
 =begin
   Código de Situação Tributária do PIS.

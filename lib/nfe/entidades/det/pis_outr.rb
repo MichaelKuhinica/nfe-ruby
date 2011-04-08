@@ -2,7 +2,7 @@ require 'nfe/entidades/entidade_nfe'
 
 module NFe
 
-  class PISOutr < EntidadeNFe
+  class PISOutr < NFe::EntidadeNFe
 
     nfe_attr :CST
 # choice

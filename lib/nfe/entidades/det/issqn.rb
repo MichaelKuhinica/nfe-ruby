@@ -2,7 +2,7 @@ require 'nfe/entidades/entidade_nfe'
 
 module NFe
 
-  class Issqn < EntidadeNFe
+  class Issqn < NFe::EntidadeNFe
 
 #  Valor da BC do ISSQN
     nfe_attr :vBC

@@ -5,7 +5,7 @@ require 'nfe/entidades/entidade_nfe'
 module NFe
 
 #Informações de exportação
-  class Exportacao < EntidadeNFe
+  class Exportacao < NFe::EntidadeNFe
 
     #UF onde ocorrerá o embarque dos produtos
     nfe_attr :UFEmbarq

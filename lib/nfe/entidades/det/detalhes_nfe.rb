@@ -1,7 +1,7 @@
 require 'nfe/entidades/entidade_nfe'
 #det da nfe
 #Dados dos detalhes da NF-e
-class DetalhesNFe < EntidadeNFe
+class DetalhesNFe < NFe::EntidadeNFe
 
   #Dados dos produtos e serviços da NFe
   nfe_attr :prod

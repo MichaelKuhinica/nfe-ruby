@@ -2,7 +2,7 @@
 
 module NFe
 
-  class Avulsa < EntidadeNFe
+  class Avulsa < NFe::EntidadeNFe
 
     #CNPJ do Órgão emissor
     nfe_attr :CNPJ

@@ -4,7 +4,7 @@ module NFe
 
 #elemento PIS do elemento imposto do elemento det da NFe
 #Dados do PIS
-  class PIS < EntidadeNFe
+  class PIS < NFe::EntidadeNFe
 
     nfe_attr :PISAliq #tem classe
 
