@@ -1,8 +1,7 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'nfe/config/params'
-require 'nfe/nfe'
-require 'nfe/util/validation_control'
+require 'nfe/entidades/nota_fiscal'
 
 if __FILE__==$0
   puts 'Rodando nfe'

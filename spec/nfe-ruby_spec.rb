@@ -1,9 +1,8 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
-require 'nokogiri'
-require 'nfe/entidades/entidade_nfe'
+
+require 'nfe/entidades/nota_fiscal'
 
 describe 'nfe' do
-
 
   it 'should generate a valid xml' do
     @xsds_path = File.dirname(__FILE__) + '/../nfedoc/PL_006g/'
