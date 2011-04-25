@@ -13,7 +13,6 @@ module NFe
       attr_accessor :soap_params, :client
 
       def initialize(user, pass, certificate_path, state='sp')
-        raise 'estado em formato inválido' unless state.respond_to? :to_sym
         raise 'estado em formato invalido' unless state.respond_to? :to_sym
         @soap_params = NFe::Config::Params::URLS::SOAP_URLS[state.to_sym]
         @url = "#{@soap_params[:base_url]}#{:status_servico}"
