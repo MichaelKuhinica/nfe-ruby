@@ -48,13 +48,14 @@ GEM
       rack (>= 1.0.0)
 
 PLATFORMS
+  em-unknown
   ruby
+  unknown
   x86-mingw32
 
-DEPENDENCIE
-  bundler
+DEPENDENCIES
+  bundler (~> 1.0.10)
   em-http-request
-  i18n
   jeweler (~> 1.5.2)
   nokogiri
   rcov
