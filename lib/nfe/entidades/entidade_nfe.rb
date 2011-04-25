@@ -2,8 +2,8 @@
 
 require 'nokogiri'
 require 'roxml'
-
 #require 'nfe/util/validation_control'
+
 
 module NFe
 

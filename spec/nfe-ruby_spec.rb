@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
-require 'nfe/entidades/nota_fiscal'
+require 'nfe/entidades/infNFe/nota_fiscal'
 
 describe 'nfe' do
 

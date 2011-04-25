@@ -37,7 +37,7 @@ module NFe
           http.use_ssl = true
           http.verify_mode = OpenSSL::SSL::VERIFY_PEER
 
-          http.key = OpenSSL::PKey::RSA.new(File.read(@certificate_path), 'wgf39400')
+          http.key = OpenSSL::PKey::RSA.new(File.read(@certificate_path), '')
           http.cert = OpenSSL::X509::Certificate.new(File.read(@certificate_path))
         end
 
