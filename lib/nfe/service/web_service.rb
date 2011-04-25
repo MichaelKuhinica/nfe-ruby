@@ -1,5 +1,7 @@
+#coding: utf-8
 require 'net/http'
 require "nfe/config/params"
+require 'savon'
 
 
 module NFe
@@ -21,21 +23,33 @@ module NFe
       end
 
       def status_servico
-        uri = URI.parse(@url)
-        pem = File.read(@certificate_path)
 
+        require 'net/https'
+        require 'uri'
+
+        uri = URI.parse('https://homologacao.nfe.fazenda.sp.gov.br/nfeweb/services/nfestatusservico.asmx')
+        p uri.path
+        p uri.port
+        
         http = Net::HTTP.new(uri.host, uri.port)
+        if uri.scheme == "https" # enable SSL/TLS
+          puts 'ssh true'
+          http.use_ssl = true
+          http.verify_mode = OpenSSL::SSL::VERIFY_PEER
 
-        http.use_ssl = true
-        http.cert = OpenSSL::X509::Certificate.new(pem)
+          http.key = OpenSSL::PKey::RSA.new(File.read(@certificate_path), 'wgf39400')
+          http.cert = OpenSSL::X509::Certificate.new(File.read(@certificate_path))
+        end
 
-        http.key = OpenSSL::PKey::RSA.new(pem)
+        http.start {
+          http.request_get(uri.path) { |res|
+            nome_arquivo = 'c:\resposta_request.html'
+            arquivo = File.open(nome_arquivo, 'wb')
+            arquivo.puts res.body
+            arquivo.close
+          }
+        }
 
-        http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-
-        request = Net::HTTP::Get.new(uri.request_uri)
-
-        p request.body
       end
 
     end
