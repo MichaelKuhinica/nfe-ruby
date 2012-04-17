@@ -1,6 +1,7 @@
 module NFe
 #Tipo Protocolo de status resultado do processamento da NF-e
-  class ProtocoloNfe < ProtocoloStatus
+  class ProtocoloNFe < ProtocoloStatus
+  	xml_name :TProtNFe
 
     #dados do protocolo de status
     nfe_attr :infProt #aparece cabecalho

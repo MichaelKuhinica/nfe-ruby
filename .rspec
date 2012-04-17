@@ -1,1 +1,1 @@
---color --format=doc
+-r spec_helper.rb --color -f doc

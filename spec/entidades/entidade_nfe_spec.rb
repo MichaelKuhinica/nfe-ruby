@@ -1,8 +1,9 @@
 describe 'NFe::EntidadeNFe' do
   describe 'Metodos de classe' do
-    it 'deve ter o metodo "nfe_attr"' do
-      NFe::EntidadeNFe::methods.include?(:nfe_attr).should be_true
-    end
+    subject {NFe::EntidadeNFe}
+
+    it {should respond_to :nfe_attr}
+    it {should respond_to :nfe_attrs}
   end
 
   describe 'Metodos de instancia' do

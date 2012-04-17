@@ -21,7 +21,7 @@ module NFe
     nfe_attr :fone
 
     def initialize
-      @cPais = Nfe::CODIGO_BRASIL
+      @cPais = NFe::Config::Params::CODIGO_BRASIL
       @xPais = 'BRASIL'
     end
 

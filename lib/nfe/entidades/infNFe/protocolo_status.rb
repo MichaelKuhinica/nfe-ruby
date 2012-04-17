@@ -40,7 +40,7 @@ module NFe
     #<xs:element ref="ds:Signature" minOccurs="0"/>
 
     def tpAmb=(value)
-      if Nfe::TIPOS_DE_AMBIENTE.include? value
+      if NFe::Config::Params::TIPOS_DE_AMBIENTE.include? value
         @tpAmb = value
       else
         raise 'Tipo de ambiente inválido'

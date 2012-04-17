@@ -1,2 +1,4 @@
-$:.unshift File.expand_path(File.join(File.dirname(__FILE__), ".."))
-require 'lib/nfe-ruby'
+$LOAD_PATH.unshift(File.dirname(__FILE__) + '../../lib')
+require 'rspec'
+require 'nfe-ruby'
+require 'nfe/service/web_service'
