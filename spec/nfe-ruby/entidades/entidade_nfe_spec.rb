@@ -1,48 +1,34 @@
-require File.expand_path(File.dirname(__FILE__) + '../../../spec_helper')
-require 'nfe/entidades/infNFe/nota_fiscal'
-
-describe 'EntidadeNFe' do
-
-  describe "Class Methods" do
-
-    it 'should be true' do
-      true.should be_true
+describe 'NFe::EntidadeNFe' do
+  describe 'Metodos de classe' do
+    it 'deve ter o metodo "nfe_attr"' do
+      NFe::EntidadeNFe::methods.include?(:nfe_attr).should be_true
     end
-
-    it 'should have nfe_attr as a method' do
-      NFe::EntidadeNFe::methods.include?(:nfe_attrs).should be_true
-    end
-
   end
 
-  describe "Instances" do
-
+  describe 'Metodos de instancia' do
     before(:all) do
-
       class Teste < NFe::EntidadeNFe
         nfe_attr :teste_attr
       end
 
-      @obj_test = Teste.new
-    end
-
-    it 'attributes method must return an hash' do
-      @obj_test.nfe_attrs.should eql(["teste_attr"])
-    end
-
-    it 'should not share attrbutes with simblings' do
       class Teste2 < NFe::EntidadeNFe
         nfe_attr :teste_attr2
       end
+      
+      @obj_test = Teste.new
+    end
 
+    it 'nfe_attrs retorna um array contendo os atributos da nfe' do
       @obj_test.nfe_attrs.should eql(["teste_attr"])
     end
 
-    it 'should export as valid xml' do
+    it 'nao pode compartilhar atributos quando herdada' do
+      @obj_test.nfe_attrs.should eql(["teste_attr"])
+    end
+
+    it 'gera um xml valido' do
       @obj_test.teste_attr = "valor"
       @obj_test.to_nfe.should eql("<?xml version=\"1.0\"?>\n<teste>\n  <teste_attr>valor</teste_attr>\n</teste>\n")
     end
-
   end
-
 end

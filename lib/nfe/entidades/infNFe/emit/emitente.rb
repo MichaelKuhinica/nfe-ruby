@@ -54,7 +54,7 @@ module NFe
     end
 
     def initialize
-      @endereco_pais = NFe::CODIGO_BRASIL
+      @endereco_pais = NFe::Config::Params::CODIGO_BRASIL
     end
 
     def to_s

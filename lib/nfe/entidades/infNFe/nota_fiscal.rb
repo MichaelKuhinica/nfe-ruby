@@ -1,24 +1,8 @@
 #coding: utf-8
 
-require 'nfe/entidades/entidade_nfe'
-require 'nfe/entidades/infNFe/ide/identificacao_nfe'
-require 'nfe/entidades/infNFe/emit/emitente'
-require 'nfe/entidades/infNFe/avulsa/avulsa'
-require 'nfe/entidades/infNFe/dest/destinatario'
-require 'nfe/entidades/infNFe/retirada/local_retirada'
-require 'nfe/entidades/infNFe/entrega/local_entrega'
-require 'nfe/entidades/infNFe/det/detalhes_nfe'
-require 'nfe/entidades/infNFe/total/total'
-require 'nfe/entidades/infNFe/transp/transporte'
-require 'nfe/entidades/infNFe/cobr/cobranca'
-require 'nfe/entidades/infNFe/infAdic/informacao_adicional_nfe'
-require 'nfe/entidades/infNFe/exporta/exportacao'
-require 'nfe/entidades/infNFe/compra/compra'
-require 'nfe/entidades/infNFe/cana/cana'
-
 module NFe
-
   class NotaFiscal < NFe::EntidadeNFe
+    xml_name :infNFe
 
     nfe_attr :ide #ok
     nfe_attr :emit #ok
@@ -38,10 +22,6 @@ module NFe
     nfe_attr :Id
 
     #ds:signature ???
-
-    def attributes
-      {:infNFe => super}
-    end
 
     STATUS = {
         (EM_DIGITACAO = 1) => 'Em Digitacao',
@@ -102,17 +82,14 @@ module NFe
         'Combustivel'
     ]
 
-    AMBIENTES = [
-        [1, 'Producao'],
-        [2, 'Homologacao'],
-    ]
+    AMBIENTES = NFe::Config::Params::TIPOS_AMBIENTE
 
     def self.status_inicial
       NotaFiscal::STATUS[:em_digitacao]
     end
 
     def initialize
-      @versao_processo_emissao = NFe::VERSAO_PADRAO
+      @versao_processo_emissao = NFe::Config::Params::VERSAO_PADRAO
       @ide = IdentificacaoNFe.new
       @emit = Emitente.new
       @avulsa = Avulsa.new
@@ -132,5 +109,4 @@ module NFe
     end
 
   end
-  
 end

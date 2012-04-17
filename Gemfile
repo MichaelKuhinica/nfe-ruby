@@ -2,6 +2,7 @@ source "http://rubygems.org"
 # Required
 gem "nokogiri"
 gem "roxml"
+gem "savon"
 
 group :evented do
   gem "em-http-request"
@@ -15,5 +16,4 @@ group :development do
   gem "rspec", "~> 2.3.0"
   gem "bundler", '~> 1.0.10'
   gem "jeweler", "~> 1.5.2"
-  gem "rcov", ">= 0"
 end
